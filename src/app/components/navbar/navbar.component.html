@@ -1,0 +1,63 @@
+<nav>
+    <div class="logo">
+        <a href="#"><img src="assets/logo.png" height="60px" width="200px" /></a>
+    </div>
+
+</nav>
+<div id='menu' (click)="toggleMenu()">
+    <div class='menu-line1' [ngClass]="{'rotate1': menuOpen, 'rotate': menuOpen}"></div>
+    <div class='menu-line2' [ngClass]="{'rotate2': menuOpen}"></div>
+</div>
+<div class='nav-page1' [ngClass]="{'transform': menuOpen}">
+    <div class="navbarContainerLeftRight">
+        <div class="navbarLeftSide">
+            <h1 class="navbarHeading">Social Media</h1>
+            <span class="socialMediaIconText" style="margin-top: -0.7rem;">
+                <a data-mdb-ripple-init class="btn btn-link btn-floating text-body m-1 random" target="_blank"
+                    href="https://www.instagram.com/recrutory/?hl=en" role="button" data-mdb-ripple-color="dark"><i
+                        class="fab fa-instagram iconinsta"></i></a>
+                <a href="https://www.instagram.com/recrutory/?hl=en" target="_blank"
+                    class="socialMediaText">Instagram</a>
+            </span>
+            <span class="socialMediaIconText">
+                <a data-mdb-ripple-init class="btn btn-link btn-floating text-body m-1 random" target="_blank"
+                    href="https://www.facebook.com/profile.php?id=61556404210113" role="button"
+                    data-mdb-ripple-color="dark"><i class="fab fa-facebook-f iconf"></i></a>
+                <a href="https://www.facebook.com/profile.php?id=61556404210113" target="_blank"
+                    class="socialMediaText">Facebook</a></span>
+            <span class="socialMediaIconText">
+                <a data-mdb-ripple-init class="btn btn-link btn-floating text-body m-1 random" target="_blank"
+                    href="https://www.linkedin.com/company/recrutorycompany/" role="button"
+                    data-mdb-ripple-color="dark"><i class="fab fa-linkedin iconlinkdin"></i></a>
+                <a href="https://www.linkedin.com/company/recrutorycompany/" target="_blank"
+                    class="socialMediaText">LinkedIn</a></span>
+            <span class="socialMediaIconText" >  
+                 <a data-mdb-ripple-init class="btn btn-link btn-floating text-body m-1 random" target="_blank" href="#!" 
+                    role="button" data-mdb-ripple-color="dark"><img width="22px" height="22px" style="margin-left: -4.5px;"
+                        src="assets/twitter.svg" />
+                </a>
+                <a href="#!" target="_blank" class="socialMediaText">Twitter</a></span>
+            <span class="socialMediaIconText">
+                <a data-mdb-ripple-init class="btn btn-link btn-floating text-body m-1 random" target="_blank" href="#!"
+                    role="button" data-mdb-ripple-color="dark"><img width="15px" height="17px" style="margin-left: -1px;"
+                        src="assets/google.svg" />
+                </a>
+                <a href="#!" target="_blank" class="socialMediaText">Google</a></span>
+        </div>
+        <div class="navbarRightSide">
+            <h1 class="navbarHeading">Menu</h1>
+            <span><a href="/" class="menuText">Home</a></span>
+            <span class="navbarVerbiqImg"><a href="verbiq"><img src="assets/verbiq_logo.png" height="35px"
+                        width="auto" /></a></span>
+            <span><a href="blogs" class="menuText">Blogs</a></span>
+            <span class="menuText"><a href="insights" class="menuText">Global Insight</a></span>
+            <span style="margin-top: -0.8rem;"><a href="trends" class="menuSubText">- Trends</a></span>
+            <span style="margin-top: -1rem;"><a href="industries" class="menuSubText">- Industries</a></span>
+        </div>
+    </div>
+    <div class="navbarContactEmail">
+        <h5 class="navbarHeading">Get In Touch</h5>
+        <h4><a href="mailto:hr@recrutory.com" class="socialMediaText">hr&#64;recrutory.com</a></h4>
+    </div>
+</div>
+<!-- <div class='nav-page2' [ngClass]="{'transform': menuOpen}"></div> -->

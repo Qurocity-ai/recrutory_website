@@ -1,0 +1,35 @@
+.container {
+	position: relative;
+	overflow: hidden; /* Hide overflow for the trigger area */
+  }
+  
+  .scrolling-wrapper {
+	overflow-x: scroll;
+	overflow-y: hidden;
+	white-space: nowrap;
+	-webkit-overflow-scrolling: touch; /* Enable smooth scrolling on iOS devices */
+	margin-bottom: 20px; /* Optional: Add margin to the bottom of the scrolling container */
+	scroll-snap-type: x mandatory; /* Enable scroll snapping */
+	height: 200px; /* Set a fixed height for the scrolling container */
+  }
+  
+  
+  .scroll-down-trigger {
+	position: absolute;
+	bottom: 0;
+	left: 0;
+	width: 100%; /* Ensure it covers the entire width of its parent */
+	height: 50px; /* Adjust height as needed */
+	background-color: transparent; /* Set the background color to make it visible */
+	pointer-events: auto; /* Ensure the trigger area can capture pointer events */
+  }
+  
+  .scrolling-wrapper .card {
+	display: inline-block;
+	width: 100%; /* Adjust card width as needed */
+	height: 80%; /* Adjust card height as needed */
+	margin-right: 10px; /* Adjust margin between cards */
+	background-color: #ccc; /* Default background color */
+	scroll-snap-align: start; /* Snap cards to the start of the container */
+  }
+  

@@ -1,0 +1,403 @@
+
+
+
+
+/* navbar */
+
+nav {
+  text-align: center;
+  align-items: center;
+  justify-content: center;
+
+  /* position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        z-index: 1000;
+        background-color: #ffffff; */
+}
+.logo {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  border-bottom: 2px solid #61bdee;
+  padding-bottom: 5px;
+  color: #022b41;
+}
+.navbar-links {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  padding: 1rem 0rem 0rem;
+}
+.navbar-links ul {
+  display: flex;
+  text-align: center;
+  align-items: baseline;
+}
+.navbar-links ul li {
+  list-style-type: none;
+  padding: 0rem 6rem 0rem 0rem;
+  font-family: "Poppins", sans-serif;
+}
+.navbar-links a {
+  text-decoration: none;
+  color: #022b41;
+}
+
+@media screen and (max-width: 692px) {
+  .navbar-links ul li {
+    padding: 0rem 5rem 0rem 0rem;
+  }
+}
+@media screen and (max-width: 497px) {
+  .navbar-links ul {
+    padding-left: 0px;
+  }
+  .navbar-links ul li {
+    padding: 0rem 3rem 0rem 1rem;
+  }
+}
+@media screen and (max-width: 397px) {
+  .navbar-links ul {
+    padding-left: 0px;
+  }
+  .navbar-links ul li {
+    padding: 0rem 1.7rem 0rem 1rem;
+  }
+}
+
+/* Apply styles for active link when clicked */
+/* .navbar-links ul li a:hover {
+    padding: 0px 0px 10px;
+    border-bottom: 3px solid #022b41;
+    border-radius: 20%;
+  } */
+/* .navbar-links ul li a:hover {
+  padding: 0px 0px 10px;
+  border-bottom: 3px solid #022b41;
+  border-radius: 20%;
+} */
+
+.whyactive a {
+  padding: 0px 0px 10px;
+  border-bottom: 3px solid #022b41;
+  border-radius: 20%;
+}
+
+
+.dropdown {
+  position: relative;
+  display: inline-block;
+}
+
+.dropdown-content {
+  display: none;
+  position: absolute;
+  background-color: #f9f9f9;
+  min-width: 160px;
+  box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+  z-index: 1;
+}
+
+.dropdown-content a {
+  color: black;
+  padding: 12px 16px;
+  text-decoration: none;
+  display: block;
+}
+
+.dropdown-content a:hover {
+  background-color: #f1f1f1;
+}
+
+.dropdown:hover .dropdown-content {
+  display: block;
+}
+
+.dropbtn {
+  color: black;
+  padding: 16px;
+  font-size: 16px;
+  border: none;
+  cursor: pointer;
+}
+
+
+
+
+
+
+/* content starts from here */
+
+/* title css */
+
+.section-title {
+  text-align: center;
+  padding-bottom: 30px;
+}
+
+.section-title h2 {
+  font-size: 32px;
+  font-weight: bold;
+  text-transform: uppercase;
+  margin-bottom: 20px;
+  padding-bottom: 20px;
+  position: relative;
+  color: #37517e;
+}
+
+.section-title h2::before {
+  content: "";
+  position: absolute;
+  display: block;
+  width: 120px;
+  height: 1px;
+  background: #ddd;
+  bottom: 1px;
+  left: calc(50% - 60px);
+}
+
+.section-title h2::after {
+  content: "";
+  position: absolute;
+  display: block;
+  width: 40px;
+  height: 3px;
+  background: #47b2e4;
+  bottom: 0;
+  left: calc(50% - 20px);
+}
+
+
+
+
+/* cards css */
+
+
+#cards .card {
+  border-radius: 20px;
+  min-height: 100%;
+}
+
+#cards .heading-border {
+  position: absolute;
+  width: 100%;
+  top: 60%;
+}
+
+#cards .card .user-picture img {
+  position: absolute;
+  top: -25%;
+  right: 10%;
+  background: #f8f9fa!important;
+  padding: 10px;
+}
+
+
+
+#cards .card .user-content .user-name {
+  margin-right: 150px;
+}
+
+.card:hover {
+  cursor: pointer;
+  transform: translateY(-10px);
+  transition: ease-in-out 0.3s;
+}
+
+
+/* explicitly added */
+
+.team{
+  margin-top: 4rem;
+}
+.subteam1{
+  margin-top: 1rem;
+}
+
+.sheetal-mam {
+  border-bottom: 4px solid #ff2c95 !important;
+}
+.ram-sir {
+  border-bottom: 4px solid #1c68b3 !important;
+}
+.member{
+  border-bottom: 4px solid rgb(46, 196, 223) !important;
+}
+
+.user-content h5{
+  font-family: "Poppins", sans-serif;
+}
+.user-content .profile{
+  font-family: "Poppins", sans-serif;
+}
+.user-content .bio{
+  text-align: justify;
+  font-family: "Poppins", sans-serif;
+}
+.user-picture img{
+  object-fit: cover;
+}
+
+.row1, .row2{
+  display: flex;
+  justify-content: center;
+  align-items: stretch;
+}
+
+.member1{
+  margin-right: 1rem;
+  min-height: 100%;
+}
+.member2{
+  margin-left: 1rem;
+  min-height: 100%;
+}
+
+
+
+@media screen and (max-width: 950px) {
+  #cards .card .user-picture img {
+    top: -20%;
+  }
+}
+@media screen and (max-width: 770px) {
+  .row1, .row2{
+    flex-direction: column;
+  }
+  .member1{
+    margin-right: 0rem;
+  }
+  .member2{
+    margin-left: 0rem;
+  }
+  .card:hover {
+    transform: none;
+    transition: none;
+  }
+
+   .suhas img {
+    top: -60%;
+  }
+}
+
+@media screen and (max-width: 770px) {
+  .subteam1{
+    margin-top: 2rem;
+  }
+  .subteam2{
+    margin-top: 2rem;
+  }
+}
+
+
+
+/* divider */
+
+.astrodivider {
+  margin:5rem auto;
+  width:400px; 
+  max-width: 100%;
+  position:relative;
+}
+
+.astrodividermask { 
+    overflow:hidden; height:20px; 
+}
+
+.astrodividermask:after { 
+      content:''; 
+      display:block; margin:-25px auto 0;
+      width:100%; height:25px;  
+        border-radius:125px / 12px;
+       box-shadow:0 0 8px #022B41;
+}
+
+
+
+
+/* footer section */
+
+footer {
+  /* margin-top: -19rem; */
+  padding: 2rem 0;
+  background-color: #bce1eb;
+  font-size: 1rem;
+}
+
+.footer-para-about-us {
+  text-align: justify;
+  line-height: 1.5rem;
+}
+
+.about-us h6 {
+  font-size: 0.9rem;
+}
+
+.about-us p {
+  line-height: 1.5rem;
+  font-family: "Poppins", sans-serif;
+  font-size: 16px;
+}
+
+.logo-link {
+  width: 3.5rem;
+  height: auto;
+  margin: 0 -3px 4px;
+  /* margin-bottom: 4px;
+    margin-left: -3px;
+    margin-right: -3px; */
+}
+
+.iconf {
+  color: #3b5998; /* Facebook blue */
+}
+.iconinsta {
+  color: #c13584; /* Instagram pink */
+}
+.iconlinkdin {
+  color: #0077b5;
+}
+
+@media screen and (max-width: 995px) {
+  .quick-links {
+    left: 0;
+  }
+}
+
+@media screen and (max-width: 772px) {
+  .about-us {
+    text-align: left;
+  }
+}
+
+/* hover effect */
+.random {
+  color: #54b3d6;
+  text-decoration: none;
+  position: relative;
+}
+
+.random::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: -4px;
+  width: 100%;
+  height: 2px;
+  background-color: black;
+  transform: scaleX(0);
+  transition: transform 0.3s ease-in-out;
+}
+
+.random:hover::after {
+  transform: scaleX(1);
+}
+
+#footer-address {
+  text-align: justify;
+}

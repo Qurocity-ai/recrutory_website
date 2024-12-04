@@ -1,0 +1,385 @@
+
+
+
+/* navbar */
+
+nav {
+  text-align: center;
+  align-items: center;
+  justify-content: center;
+
+  /* position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        z-index: 1000;
+        background-color: #ffffff; */
+}
+.logo {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  border-bottom: 2px solid #61bdee;
+  padding-bottom: 5px;
+  color: #022b41;
+}
+.navbar-links {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  padding: 1rem 0rem 0rem;
+}
+.navbar-links ul {
+  display: flex;
+  text-align: center;
+  align-items: baseline;
+}
+.navbar-links ul li {
+  list-style-type: none;
+  padding: 0rem 6rem 0rem 0rem;
+  font-family: "Poppins", sans-serif;
+}
+.navbar-links a {
+  text-decoration: none;
+  color: #022b41;
+}
+
+@media screen and (max-width: 692px) {
+  .navbar-links ul li {
+    padding: 0rem 5rem 0rem 0rem;
+  }
+}
+@media screen and (max-width: 497px) {
+  .navbar-links ul {
+    padding-left: 0px;
+  }
+  .navbar-links ul li {
+    padding: 0rem 3rem 0rem 1rem;
+  }
+}
+@media screen and (max-width: 397px) {
+  .navbar-links ul {
+    padding-left: 0px;
+  }
+  .navbar-links ul li {
+    padding: 0rem 1.7rem 0rem 1rem;
+  }
+}
+
+/* Apply styles for active link when clicked */
+/* .navbar-links ul li a:hover {
+    padding: 0px 0px 10px;
+    border-bottom: 3px solid #022b41;
+    border-radius: 20%;
+  } */
+/* .navbar-links ul li a:hover {
+  padding: 0px 0px 10px;
+  border-bottom: 3px solid #022b41;
+  border-radius: 20%;
+} */
+
+.whyactive a {
+  padding: 0px 0px 10px;
+  border-bottom: 3px solid #022b41;
+  border-radius: 20%;
+}
+
+
+.dropdown {
+  position: relative;
+  display: inline-block;
+}
+
+.dropdown-content {
+  display: none;
+  position: absolute;
+  background-color: #f9f9f9;
+  min-width: 160px;
+  box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+  z-index: 1;
+}
+
+.dropdown-content a {
+  color: black;
+  padding: 12px 16px;
+  text-decoration: none;
+  display: block;
+}
+
+.dropdown-content a:hover {
+  background-color: #f1f1f1;
+}
+
+.dropdown:hover .dropdown-content {
+  display: block;
+}
+
+.dropbtn {
+  color: black;
+  padding: 16px;
+  font-size: 16px;
+  border: none;
+  cursor: pointer;
+}
+
+
+
+
+/* form content */
+
+.mat-stepper {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 80%;
+
+}
+
+.mat-stepper-horizontal {
+  border-radius: 10px;
+  border: 1px solid rgba(255, 255, 255, 0.18);
+  box-shadow: 0 2px 4px #507577;
+  border-radius: 10px;
+  margin: 3rem 6rem 0;
+  font-family: "Poppins", sans-serif;
+}
+
+#verticalId {
+  background-color: white;
+  box-shadow: 0 2px 4px #507577;
+  border-radius: 10px;
+  margin: 3rem 6rem 0;
+  font-family: "Poppins", sans-serif;
+}
+
+form {
+  padding: 1rem;
+}
+
+.row {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.select-option-form{
+  width: 33%;
+}
+
+.mat-mdc-form-field {
+  margin-top: 1rem;
+  max-width: 50%;
+}
+
+.example-full-width {
+  min-width: 100%;
+}
+
+.radio {
+  margin-top: 1.7rem;
+}
+
+.radion-button {
+  margin-right: 1rem;
+}
+
+.textareas {
+  margin-top: 1rem;
+}
+
+#verticalId p {
+  font-size: 0.9rem;
+}
+
+.textareas p {
+  font-size: 1rem;
+  margin-bottom: -2px;
+}
+
+::ng-deep mat-chip-option.color {
+  /* Add your custom styles here */
+  background-color: #ffcc00; 
+  color: #333; /* Example custom text color */
+}
+
+
+.mat-stepper-horizontal,
+#verticalId {
+  /* background: linear-gradient(-45deg, #ee7752, #e73c7e, #23a6d5, #23d5ab); */
+  /* background: linear-gradient(-45deg, whitesmoke, white, #cee2ec, #d2dce1); */
+  /* background-color: rgb(201, 234, 255); */
+  background-color: white;
+  background-size: 400% 400%;
+  animation: gradient 15s ease infinite;
+  /* height: 100vh; */
+}
+
+.bottom-buttons{
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+/* for disabling the tabs clicking */
+::ng-deep .mat-horizontal-stepper-header{
+    pointer-events: none !important;
+}
+
+::ng-deep .mat-vertical-stepper-header {
+  pointer-events: none !important;
+}
+
+
+
+
+
+@keyframes gradient {
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
+}
+
+@media screen and (max-width: 3000px) {
+  #verticalId {
+    display: none;
+  }
+}
+
+@media screen and (max-width: 1300px) {
+  #horizontalId {
+    margin: 2rem 5rem 5rem;
+  }
+
+  .stepper-label {
+    max-width: max-content;
+    font-size: 0.6rem;
+  }
+}
+
+@media screen and (max-width: 900px) {
+  #verticalId {
+    display: block;
+    margin: 2rem 0.5rem 0;
+  }
+
+  #horizontalId {
+    display: none;
+  }
+}
+
+@media screen and (max-width: 740px) {
+
+  .row {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+  }
+
+  .mat-mdc-form-field {
+    max-width: 100%;
+  }
+
+  .select-option-form{
+    width: 100%;
+  }
+
+  #verticalId p {
+    font-size: 1rem;
+  }
+
+  .textareas p {
+    font-size: 1rem;
+  }
+}
+
+/* footer section */
+
+footer {
+  /* margin-top: -19rem; */
+  padding: 2rem 0;
+  background-color: #bce1eb;
+  font-size: 1rem;
+}
+
+.footer-para-about-us {
+  text-align: justify;
+  line-height: 1.5rem;
+}
+
+.about-us h6 {
+  font-size: 0.9rem;
+}
+
+.about-us p {
+  line-height: 1.5rem;
+  font-family: "Poppins", sans-serif;
+  font-size: 16px;
+}
+
+.logo-link {
+  width: 3.5rem;
+  height: auto;
+  margin: 0 -3px 4px;
+  /* margin-bottom: 4px;
+    margin-left: -3px;
+    margin-right: -3px; */
+}
+
+.iconf {
+  color: #3b5998; /* Facebook blue */
+}
+.iconinsta {
+  color: #c13584; /* Instagram pink */
+}
+.iconlinkdin {
+  color: #0077b5;
+}
+
+@media screen and (max-width: 995px) {
+  .quick-links {
+    left: 0;
+  }
+}
+
+@media screen and (max-width: 772px) {
+  .about-us {
+    text-align: left;
+  }
+}
+
+/* hover effect */
+.random {
+  color: #54b3d6;
+  text-decoration: none;
+  position: relative;
+}
+
+.random::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: -4px;
+  width: 100%;
+  height: 2px;
+  background-color: black;
+  transform: scaleX(0);
+  transition: transform 0.3s ease-in-out;
+}
+
+.random:hover::after {
+  transform: scaleX(1);
+}
+
+#footer-address {
+  text-align: justify;
+}

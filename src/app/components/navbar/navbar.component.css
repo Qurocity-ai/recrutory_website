@@ -1,0 +1,218 @@
+
+nav {
+  text-align: center;
+  align-items: center;
+  justify-content: center;
+
+  /* position: fixed;
+          top: 0;
+          left: 0;
+          width: 100%;
+          z-index: 1000;
+          background-color: #ffffff; */
+}
+.logo {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  border-bottom: 2px solid #61bdee;
+  padding-bottom: 5px;
+  color: #022b41;
+}
+
+#menu {
+  position: fixed;
+  right: 2rem;
+  top: 1rem;
+  width: 30px;
+  height: 30px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  transition: 0.5s;
+  z-index: 10;
+}
+
+.menu-line1 {
+  width: 100%;
+  height: 2px;
+  background: black;
+  transition: 0.6s;
+}
+
+.menu-line2 {
+  width: 80%;
+  height: 2px;
+  margin-top: 0.7rem;
+  background: black;
+  transition: 0.6s;
+}
+
+.rotate {
+  transform: rotateZ(180deg);
+}
+
+.rotate1 {
+  background: #212121;
+  transform: rotateZ(45deg);
+}
+
+.rotate2 {
+  background: #212121;
+  width: 100%;
+  transform: translate(0, -0.8rem) rotateZ(-45deg);
+}
+
+.nav-page1 {
+  position: fixed;
+  top: 0;
+  right: 0%;
+  background: white;
+  width: 50%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  color: #212121;
+  transform: translate(100%, 0%);
+  transition: ease-in-out 0.5s;
+  z-index: 1;
+}
+
+.nav-page1 span {
+  padding: 1rem;
+}
+
+.nav-page2 {
+  position: fixed;
+  top: 60%;
+  right: 0%;
+  background: white;
+  width: 50%;
+  height: 40%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  color: #212121;
+  transform: translate(100%, 0%);
+  transition: ease-in-out 0.6s;
+}
+
+.transform {
+  transform: translate(0, 0);
+}
+
+.navbarContainerLeftRight {
+  width: 100%;
+  height: 70%;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  padding: 1rem 2rem 1rem;
+}
+
+.navbarLeftSide,
+.navbarRightSide {
+  display: flex;
+  flex-direction: column;
+  /* border: 1px solid black; */
+}
+.navbarVerbiqImg{
+  margin: -0.4rem 0rem -0.4rem -0.3rem;
+}
+
+.navbarHeading {
+  color: rgba(0, 0, 0, 0.3);
+  font-size: 18px;
+  line-height: 100%;
+  font-weight: bold;
+  font-family: "Raleway", sans-serif;
+}
+
+.socialMediaIconText{
+  display: flex;
+  flex-direction: row;
+  justify-content: left;
+  align-items: center;
+  margin-top: -1.7rem;
+}
+
+.iconf {
+  color: #3b5998; 
+}
+.iconinsta {
+  color: #c13584; 
+}
+.iconlinkdin{
+  color: #0077b5;
+}
+
+.socialMediaText {
+  text-decoration: none;
+  color: black;
+  font-size: 18px;
+  font-family: "Raleway", sans-serif;
+  font-weight: 500;
+}
+
+
+
+.menuText {
+  text-decoration: none;
+  color: black;
+  font-size: 22px;
+  font-family: "Raleway", sans-serif;
+  font-weight: 500;
+}
+
+.menuSubText{
+  text-decoration: none;
+  color: black;
+  font-size: 17px;
+  font-family: "Raleway", sans-serif;
+  font-weight: 500;
+  margin-left: 1rem;
+  margin-top: -5rem;
+}
+
+.navbarLeftSide {
+  flex: 40%;
+  padding: 1rem 3rem 0rem;
+}
+.navbarRightSide {
+  flex: 80%;
+  padding: 1rem 4rem 0rem;
+}
+.navbarContactEmail {
+  text-align: left;
+  padding: 2rem 4rem 0rem;
+  width: 100%;
+}
+@media screen and (max-width: 800px) {
+  #menu{
+    position: absolute;
+  }
+  .nav-page1 {
+    width: 100%;
+    top: 4.2rem;
+  }
+  .nav-page2 {
+    width: 100%;
+  }
+  .navbarLeftSide{
+    display: none;
+  }
+  .navbarContactEmail {
+    margin-top: 2rem;
+  }
+  .navbarContainerLeftRight{
+    text-align: left;
+    height: 50%;
+    padding: 0rem 2rem 1rem;
+    margin-top: -14rem;
+  }
+}

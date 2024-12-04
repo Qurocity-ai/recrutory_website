@@ -1,0 +1,137 @@
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap" rel="stylesheet">
+<link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Lobster&display=swap" rel="stylesheet">
+
+<div class="background" style="
+    background-image: url('https://res.cloudinary.com/dgvbilofn/image/upload/v1714020450/background_zceu6f.png');
+    height: auto;
+    background-size: cover;
+    background-position: center;
+    justify-content: center;
+    align-items: center;
+">
+  <app-navbar></app-navbar>
+
+  <div class="blog-heading">
+    <h1>Blogs</h1>
+  </div>
+
+  <div *ngIf="loading" class="loading-spinner">
+    <!-- <mat-spinner></mat-spinner> -->
+    <div class="spinnerContainer">
+      <div class="spinner"></div>
+      <div class="loader">
+        <p>Loading</p>
+        <div class="words">
+          <span class="word">Posts</span>
+          <span class="word">Images</span>
+          <span class="word">Data</span>
+          <span class="word">Title</span>
+          <span class="word">Posts</span>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="blogs" *ngIf="!loading">
+    <div class="blog-container" style="display: flex; flex-wrap: wrap;">
+      <mat-card class="blog-card" *ngFor="let post of blogPosts" (click)="openBlog(post._id)">
+        <img mat-card-image [src]="post.imageUrl" alt="Blog Image">
+        <mat-card-content style="font-family: 'Poppins', sans-serif;">
+          <mat-card-title>{{ post.title }}</mat-card-title>
+          <mat-card-subtitle>{{ post.date }}</mat-card-subtitle>
+          <hr />
+          <p style="text-align: justify;" class="cardtitle">{{ post.intro }}</p>
+          <h3 class="read-more">Read More >></h3>
+        </mat-card-content>
+      </mat-card>
+    </div>
+    <!-- <mat-paginator [length]="100" [pageSize]="10" [pageSizeOptions]="[5, 10, 25, 100]" aria-label="Select page">
+    </mat-paginator> -->
+  </div>
+</div>
+
+<!-- Footer -->
+<footer class="text-center text-lg-start text-muted" style="font-family: 'Poppins', sans-serif">
+  <div class="text-center text-md-start m-5">
+    <!-- Grid row -->
+    <div class="row">
+      <!-- Grid column -->
+      <div class="col-lg-4 col-md-12 mb-5 mb-md-0 about-us">
+        <h6 class="text-uppercase fw-bold mb-4">About Us</h6>
+
+        <p class="footer-para-about-us">
+          Recrutory, powered by
+          <img class="logo-link" src="assets/verbiq_logo.png" alt="" /> AI,
+          specializes in the multilingual recruitment, global talent search, and
+          advanced assessment and screening. We connect businesses in India and
+          worldwide with top-tier professionals, leveraging our extensive
+          network and cutting-edge technology to ensure unparalleled talent
+          matches.
+        </p>
+      </div>
+      <!-- Grid column -->
+
+      <div class="col-lg-4 col-md-12 mb-5 mb-md-0 quick-links about-us" style="position: relative; right: -5rem">
+        <h6 class="text-uppercase fw-bold mb-4">Quick links</h6>
+        <p>
+          <a href="verbiq" class="text-reset text-decoration-none random"><img class="logo-link"
+              src="assets/verbiq_logo.png" alt="" /></a>
+        </p>
+        <p>
+          <a href="team" class="text-reset text-decoration-none random">Meet our Team</a>
+        </p>
+        <p>
+          <a href="#!" class="text-reset text-decoration-none random">Media & Press Release</a>
+        </p>
+      </div>
+
+      <!-- Grid column -->
+      <div class="col-lg-4 col-md-12 about-us">
+        <h6 class="text-uppercase fw-bold mb-4">Contact Us</h6>
+        <p>
+          <i class="fas fa-home me-3" id="footer-address"></i>Corp. Off. No 16A,
+          Floor 2, Tower A, Downtown City Vista, Fountain Road, Ashoka Nagar,
+          Kharadi, Pune – 411014
+        </p>
+        <p><i class="fas fa-envelope me-3"></i> hr&#64;recrutory.com</p>
+        <p><i class="fas fa-phone me-3"></i> +91 9373902341</p>
+      </div>
+      <!-- Grid column -->
+    </div>
+    <!-- Grid row -->
+  </div>
+
+  <div class="container pt-4 text-center">
+    <section class="mb-4">
+      <!-- Facebook -->
+      <a data-mdb-ripple-init class="btn btn-link btn-floating text-body m-1 random" target="_blank"
+        href="https://www.facebook.com/profile.php?id=61556404210113" role="button" data-mdb-ripple-color="dark"><i
+          class="fab fa-facebook-f iconf"></i></a>
+
+      <!-- Twitter -->
+      <a data-mdb-ripple-init class="btn btn-link btn-floating text-body m-1 random" target="_blank" href="#!"
+        role="button" data-mdb-ripple-color="dark"><img width="22px" height="22px" src="assets/twitter.svg" />
+      </a>
+
+      <!-- Google -->
+      <a data-mdb-ripple-init class="btn btn-link btn-floating text-body m-1 random" target="_blank" href="#!"
+        role="button" data-mdb-ripple-color="dark"><img width="15px" height="17px" src="assets/google.svg" />
+      </a>
+
+      <!-- Instagram -->
+      <a data-mdb-ripple-init class="btn btn-link btn-floating text-body m-1 random" target="_blank"
+        href="https://www.instagram.com/recrutory/?hl=en" role="button" data-mdb-ripple-color="dark"><i
+          class="fab fa-instagram iconinsta"></i></a>
+
+      <!-- Linkedin -->
+      <a data-mdb-ripple-init class="btn btn-link btn-floating text-body m-1 random" target="_blank"
+        href="https://www.linkedin.com/company/recrutorycompany/" role="button" data-mdb-ripple-color="dark"><i
+          class="fab fa-linkedin iconlinkdin"></i></a>
+    </section>
+    <!-- Section: Social media -->
+
+    <div class="text-center">&#64; 2024 TalentAxisPro Private Limited</div>
+  </div>
+</footer>
+<!-- Footer -->

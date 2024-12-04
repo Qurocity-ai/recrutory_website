@@ -1,0 +1,681 @@
+<link
+  href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap"
+  rel="stylesheet"
+/>
+
+<!--Tailwind CSS-->
+<script src="https://cdn.tailwindcss.com"></script>
+
+<!--Tailwind CSS-->
+
+<!--Font-Awesome-->
+<link
+  rel="stylesheet"
+  href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.2/css/all.min.css"
+  integrity="sha512-1sCRPdkRXhBV2PBLUdRb4tMg1w2YPf37qatUFeS7zlBy7jJI8Lf4VHwWfZZfpXtYSLy85pkm9GaYVYMfw5BC1A=="
+  crossorigin="anonymous"
+  referrerpolicy="no-referrer"
+/>
+
+<app-navbar></app-navbar>
+
+
+
+<div class="large">
+  
+  <!-- industries section -->
+  
+  <div class="industries">
+    <h4
+      style="
+        color: #00475d;
+        text-decoration: underline;
+        font-family: Poppins, sans-serif;
+        font-style: italic;
+      "
+    >
+      Industries that we serve...
+    </h4>
+
+    <!-- first row -->
+    <div class="odd">
+      <div class="not">
+        <h1>INFORMATION TECHNOLOGY</h1>
+      </div>
+      <div class="color">
+        <h1>ITES</h1>
+      </div>
+    </div>
+
+    <!-- second row -->
+    <div class="even">
+      <div class="not">
+        <h1>BPO</h1>
+      </div>
+      <div class="color">
+        <h1>KPO</h1>
+      </div>
+      <div class="not">
+        <h1>BFSI</h1>
+      </div>
+    </div>
+
+    <!-- third row -->
+    <div class="odd">
+      <div class="not">
+        <h1>TRAVEL & TOURISM</h1>
+      </div>
+      <div class="color">
+        <h1>MANUFACTURING</h1>
+      </div>
+    </div>
+
+    <!-- fourth row -->
+    <div class="even">
+      <div class="not">
+        <h1>LEGAL</h1>
+      </div>
+      <div class="color">
+        <h1>LOGISTICS</h1>
+      </div>
+      <div class="not">
+        <h1>PUBLISHING</h1>
+      </div>
+    </div>
+  </div>
+
+  <!-- domains section -->
+
+  <div class="domain-grid">
+    <div class="heading">
+      <h4
+        style="
+          color: #00475d;
+          text-decoration: underline;
+          font-family: Poppins, sans-serif;
+          font-style: italic;
+        "
+      >
+        Most Sought after Domains...
+      </h4>
+    </div>
+
+    <!--  -->
+    <div class="start">
+      <!-- row 1 -->
+
+      <div class="row1">
+        <div
+          class="group content1"
+          (mouseenter)="showList1 = true"
+          (mouseleave)="showList1 = false"
+        >
+          <ul [ngClass]="{ 'words words-4 clrwhite': !showList1 }">
+            <li>
+              <span class="head">Localization Specialists:</span> <br />
+              Adapt digital content for global audiences.
+            </li>
+            <li>
+              <span class="head">Multilingual Tech Support:</span> <br />
+              Provide technical assistance in multiple languages.
+            </li>
+            <li>
+              <span class="head">Global Project Managers:</span> <br />
+              Coordinate international projects and teams.
+            </li>
+            <li>
+              <span class="head">Language Quality Analysts:</span> <br />
+              Ensure linguistic accuracy and cultural relevance in software and
+              applications.
+            </li>
+          </ul>
+        </div>
+        <div
+          class="group image"
+          style="
+            background-image: url('../../../assets/gi-1.png');
+            background-size: cover;
+            background-position: center;
+            height: auto;
+            justify-content: center;
+            align-items: center;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+          "
+        >
+          <h1
+            style="
+              color: white;
+              font-size: 1.5rem;
+              z-index: 1;
+              font-family: Poppins, sans-serif;
+            "
+          >
+            IT & TECH
+          </h1>
+        </div>
+      </div>
+
+      <!-- row 2 -->
+      <div class="row2">
+        <div
+          class="group image g2"
+          style="
+            background-image: url('../../../assets/gi-2.png');
+            background-size: cover;
+            background-position: center;
+            height: auto;
+            justify-content: center;
+            align-items: center;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+          "
+        >
+          <h1
+            style="
+              color: white;
+              font-size: 1.5rem;
+              z-index: 1;
+              font-family: Poppins, sans-serif;
+            "
+          >
+            WFM
+          </h1>
+        </div>
+        <div
+          class="group content2 g2"
+          (mouseenter)="showList2 = true"
+          (mouseleave)="showList2 = false"
+        >
+          <ul [ngClass]="{ 'words words-1 clrwhite': !showList2 }">
+            <li>
+              <span class="head">Client Support:</span> <br />
+              Assisting international clients in their language.
+            </li>
+            <li>
+              <span class="head">Tech Support:</span> <br />
+              Providing technical assistance in multiple languages.
+            </li>
+            <li>
+              <span class="head">Translators and Interpreters:</span> <br />
+              Facilitating cross-cultural communication.
+            </li>
+            <li>
+              <span class="head">Cross-Cultural Trainers:</span> <br />
+              Promoting understanding among diverse teams.
+            </li>
+            <li>
+              <span class="head">Multilingual HR Managers:</span> <br />
+              Nurturing a diverse workforce.
+            </li>
+          </ul>
+        </div>
+      </div>
+
+      <!-- row 3 -->
+      <div class="row3">
+        <div
+          class="group content3"
+          (mouseenter)="showList3 = true"
+          (mouseleave)="showList3 = false"
+        >
+          <!-- class="words words-1" *ngIf="showList" -->
+
+          <ul [ngClass]="{ 'words words-4 clrblck': !showList3 }">
+            <li>
+              <span class="head">Medical Interpreters:</span> <br />
+              Bridge language gaps between patients and healthcare providers.
+            </li>
+            <li>
+              <span class="head">Bilingual Healthcare Professionals:</span>
+              <br />
+              Provide medical care in multiple languages.
+            </li>
+            <li>
+              <span class="head">Language Access Coordinators:</span> <br />
+              Ensure language services are available and accessible to all
+              patients.
+            </li>
+            <li>
+              <span class="head">Telehealth Coordinators:</span> <br />
+              Facilitate remote healthcare consultations and interpretive
+              services.
+            </li>
+          </ul>
+        </div>
+        <div
+          class="group image"
+          style="
+            background-image: url('../../../assets/gi-3.png');
+            background-size: cover;
+            background-position: center;
+            height: auto;
+            justify-content: center;
+            align-items: center;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+          "
+        >
+          <h1
+            style="
+              color: white;
+              font-size: 1.5rem;
+              z-index: 1;
+              font-family: Poppins, sans-serif;
+            "
+          >
+            HEALTHCARE
+          </h1>
+        </div>
+      </div>
+
+      <!-- row 4 -->
+      <div class="row4">
+        <div
+          class="group image g4"
+          style="
+            background-image: url('../../../assets/gi-4.png');
+            background-size: cover;
+            background-position: center;
+            height: auto;
+            justify-content: center;
+            align-items: center;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+          "
+        >
+          <h1
+            style="
+              color: white;
+              font-size: 1.5rem;
+              z-index: 1;
+              font-family: Poppins, sans-serif;
+            "
+          >
+            LEGAL
+          </h1>
+        </div>
+        <div
+          class="group content4 g4"
+          (mouseenter)="showList4 = true"
+          (mouseleave)="showList4 = false"
+        >
+          <!-- class="words words-1" *ngIf="showList" -->
+
+          <ul [ngClass]="{ 'words words-1 clrblck': !showList4 }">
+            <li>
+              <span class="head">Legal Translators:</span> <br />
+              Translate legal documents accurately.
+            </li>
+            <li>
+              <span class="head">International Attorneys:</span> <br />
+              Provide legal counsel in international cases.
+            </li>
+            <li>
+              <span class="head">Court Interpreters:</span> <br />
+              Interpret proceedings in courtrooms and legal settings.
+            </li>
+            <li>
+              <span class="head">Legal Researchers:</span> <br />
+              Conduct research and analyze legal documents in multiple
+              languages.
+            </li>
+            <li>
+              <span class="head">Legal Consultants:</span> <br />
+              Offer advice on legal matters and cross-border regulations.
+            </li>
+          </ul>
+        </div>
+      </div>
+
+      <!-- row 5 -->
+      <div class="row5">
+        <div
+          class="group content5 g5"
+          (mouseenter)="showList5 = true"
+          (mouseleave)="showList5 = false"
+        >
+          <!-- class="words words-1" *ngIf="showList" -->
+
+          <ul [ngClass]="{ 'words words-1 clrwhite': !showList5 }">
+            <li>
+              <span class="head">Multilingual Concierges:</span> <br />
+              Assist guests in their language with travel arrangements.
+            </li>
+            <li>
+              <span class="head">Guest Experience Ambassadors:</span> <br />
+              Provide personalized experiences with cultural sensitivity.
+            </li>
+            <li>
+              <span class="head">Language Instructors:</span> <br />
+              Offer language classes to staff to enhance guest interactions.
+            </li>
+            <li>
+              <span class="head">Event Coordinators:</span> <br />
+              Plan and execute multilingual events and conferences.
+            </li>
+            <li>
+              <span class="head">Tour Guides:</span> <br />
+              Lead tours in multiple languages to cater to diverse tourists.
+            </li>
+          </ul>
+        </div>
+        <div
+          class="group image g5"
+          style="
+            background-image: url('../../../assets/gi-5.png');
+            background-size: cover;
+            background-position: center;
+            height: auto;
+            justify-content: center;
+            align-items: center;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+          "
+        >
+          <h1
+            style="
+              color: white;
+              font-size: 1.5rem;
+              z-index: 1;
+              font-family: Poppins, sans-serif;
+            "
+          >
+            HOSPITALITY
+          </h1>
+        </div>
+      </div>
+    </div>
+
+    <!-- responsive mobile -->
+    <section class="carddd">
+      <div class="roww-card">
+        <!-- 1st card -->
+        <div class="columnn-card">
+          <div class="card">
+            <h3>IT & TECH</h3>
+            <div class="card second">
+              <ul>
+                <li>
+                  <span class="head">Localization Specialists:</span>
+                  Adapt digital content for global audiences.
+                </li>
+                <li>
+                  <span class="head">Multilingual Tech Support:</span>
+                  Provide technical assistance in multiple languages.
+                </li>
+                <li>
+                  <span class="head">Global Project Managers:</span>
+                  Coordinate international projects and teams.
+                </li>
+                <li>
+                  <span class="head">Language Quality Analysts:</span>
+                  Ensure linguistic accuracy and cultural relevance in software
+                  and applications.
+                </li>
+              </ul>
+            </div>
+          </div>
+        </div>
+
+        <!-- 2nd card -->
+        <div class="columnn-card">
+          <div class="card">
+            <h3>WFM</h3>
+            <div class="card second">
+              <ul>
+                <li>
+                  <span class="head">Client Support:</span>
+                  Assisting international clients in their language.
+                </li>
+                <li>
+                  <span class="head">Tech Support:</span>
+                  Providing technical assistance in multiple languages.
+                </li>
+                <li>
+                  <span class="head">Translators and Interpreters:</span>
+                  Facilitating cross-cultural communication.
+                </li>
+                <li>
+                  <span class="head">Cross-Cultural Trainers:</span>
+                  Promoting understanding among diverse teams.
+                </li>
+                <li>
+                  <span class="head">Multilingual HR Managers:</span>
+                  Nurturing a diverse workforce.
+                </li>
+              </ul>
+            </div>
+          </div>
+        </div>
+
+        <!-- 3rd card -->
+        <div class="columnn-card">
+          <div class="card">
+            <h3>HEALTHCARE</h3>
+            <div class="card second">
+              <ul>
+                <li>
+                  <span class="head">Medical Interpreters:</span> <br />
+                  Bridge language gaps between patients and healthcare
+                  providers.
+                </li>
+                <li>
+                  <span class="head">Bilingual Healthcare Professionals:</span>
+                  <br />
+                  Provide medical care in multiple languages.
+                </li>
+                <li>
+                  <span class="head">Language Access Coordinators:</span>
+                  <br />
+                  Ensure language services are available and accessible to all
+                  patients.
+                </li>
+                <li>
+                  <span class="head">Telehealth Coordinators:</span> <br />
+                  Facilitate remote healthcare consultations and interpretive
+                  services.
+                </li>
+              </ul>
+            </div>
+          </div>
+        </div>
+
+        <!-- 4th card -->
+        <div class="columnn-card">
+          <div class="card">
+            <h3>LEGAL</h3>
+            <div class="card second">
+              <ul>
+                <li>
+                  <span class="head">Legal Translators:</span> <br />
+                  Translate legal documents accurately.
+                </li>
+                <li>
+                  <span class="head">International Attorneys:</span> <br />
+                  Provide legal counsel in international cases.
+                </li>
+                <li>
+                  <span class="head">Court Interpreters:</span> <br />
+                  Interpret proceedings in courtrooms and legal settings.
+                </li>
+                <li>
+                  <span class="head">Legal Researchers:</span> <br />
+                  Conduct research and analyze legal documents in multiple
+                  languages.
+                </li>
+                <li>
+                  <span class="head">Legal Consultants:</span> <br />
+                  Offer advice on legal matters and cross-border regulations.
+                </li>
+              </ul>
+            </div>
+          </div>
+        </div>
+
+        <!-- 5th card -->
+        <div class="columnn-card">
+          <div class="card">
+            <h3>HOSPITALITY</h3>
+            <div class="card second">
+              <ul>
+                <li>
+                  <span class="head">Multilingual Concierges:</span> <br />
+                  Assist guests in their language with travel arrangements.
+                </li>
+                <li>
+                  <span class="head">Guest Experience Ambassadors:</span>
+                  <br />
+                  Provide personalized experiences with cultural sensitivity.
+                </li>
+                <li>
+                  <span class="head">Language Instructors:</span> <br />
+                  Offer language classes to staff to enhance guest interactions.
+                </li>
+                <li>
+                  <span class="head">Event Coordinators:</span> <br />
+                  Plan and execute multilingual events and conferences.
+                </li>
+                <li>
+                  <span class="head">Tour Guides:</span> <br />
+                  Lead tours in multiple languages to cater to diverse tourists.
+                </li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+  </div>
+</div>
+
+<!-- Footer -->
+<footer
+  class="text-center text-lg-start text-muted"
+  style="font-family: 'Poppins', sans-serif"
+>
+  <div class="text-center text-md-start m-5">
+    <!-- Grid row -->
+    <div class="row">
+      <!-- Grid column -->
+      <div class="col-lg-4 col-md-12 mb-5 mb-md-0 about-us">
+        <h6 class="text-uppercase fw-bold mb-4">About Us</h6>
+
+        <p class="footer-para-about-us">
+          Recrutory, powered by
+          <img class="logo-link" src="assets/verbiq_logo.png" alt="" /> AI,
+          specializes in the multilingual recruitment, global talent search, and
+          advanced assessment and screening. We connect businesses in India and
+          worldwide with top-tier professionals, leveraging our extensive
+          network and cutting-edge technology to ensure unparalleled talent
+          matches.
+        </p>
+      </div>
+      <!-- Grid column -->
+
+      <div
+        class="col-lg-4 col-md-12 mb-5 mb-md-0 quick-links about-us"
+        style="position: relative; right: -5rem"
+      >
+        <h6 class="text-uppercase fw-bold mb-4">Quick links</h6>
+        <p>
+          <a href="verbiq" class="text-reset text-decoration-none random"
+            ><img class="logo-link" src="assets/verbiq_logo.png" alt=""
+          /></a>
+        </p>
+        <p>
+          <a href="team" class="text-reset text-decoration-none random"
+            >Meet our Team</a
+          >
+        </p>
+        <p>
+          <a href="#!" class="text-reset text-decoration-none random"
+            >Media & Press Release</a
+          >
+        </p>
+      </div>
+
+      <!-- Grid column -->
+      <div class="col-lg-4 col-md-12 about-us">
+        <h6 class="text-uppercase fw-bold mb-4">Contact Us</h6>
+        <p>
+          <i class="fas fa-home me-3" id="footer-address"></i>Corp. Off. No 16A,
+          Floor 2, Tower A, Downtown City Vista, Fountain Road, Ashoka Nagar,
+          Kharadi, Pune – 411014
+        </p>
+        <p><i class="fas fa-envelope me-3"></i> hr&#64;recrutory.com</p>
+        <p><i class="fas fa-phone me-3"></i> +91 9373902341</p>
+      </div>
+      <!-- Grid column -->
+    </div>
+    <!-- Grid row -->
+  </div>
+
+  <div class="container1 pt-4 text-center">
+    <section class="mb-4 social-icons">
+      <!-- Facebook -->
+      <a
+        data-mdb-ripple-init
+        class="btn btn-link btn-floating text-body m-3 random"
+        target="_blank"
+        href="https://www.facebook.com/profile.php?id=61556404210113"
+        role="button"
+        data-mdb-ripple-color="dark"
+        ><i class="fab fa-facebook-f iconf"></i
+      ></a>
+
+      <!-- Twitter -->
+      <a
+        data-mdb-ripple-init
+        class="btn btn-link btn-floating text-body m-3 random"
+        target="_blank"
+        href="#!"
+        role="button"
+        data-mdb-ripple-color="dark"
+        ><img width="22px" height="20px" src="assets/twitter.svg" />
+      </a>
+
+      <!-- Google -->
+      <a
+        data-mdb-ripple-init
+        class="btn btn-link btn-floating text-body m-3 random"
+        target="_blank"
+        href="#!"
+        role="button"
+        data-mdb-ripple-color="dark"
+        ><img width="15px" height="17px" src="assets/google.svg" />
+      </a>
+
+      <!-- Instagram -->
+      <a
+        data-mdb-ripple-init
+        class="btn btn-link btn-floating text-body m-3 random"
+        target="_blank"
+        href="https://www.instagram.com/recrutory/?hl=en"
+        role="button"
+        data-mdb-ripple-color="dark"
+        ><i class="fab fa-instagram iconinsta"></i
+      ></a>
+
+      <!-- Linkedin -->
+      <a
+        data-mdb-ripple-init
+        class="btn btn-link btn-floating text-body m-3 random"
+        target="_blank"
+        href="https://www.linkedin.com/company/recrutorycompany/"
+        role="button"
+        data-mdb-ripple-color="dark"
+        ><i class="fab fa-linkedin iconlinkdin"></i
+      ></a>
+    </section>
+    <!-- Section: Social media -->
+
+    <div class="text-center">&#64; 2024 TalentAxisPro Private Limited</div>
+  </div>
+</footer>
+<!-- Footer -->

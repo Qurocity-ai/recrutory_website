@@ -1,0 +1,577 @@
+<!-- <link href="https://stackpath.bootstrapcdn.com/bootstrap/5.1.3/css/bootstrap.min.css" rel="stylesheet"> -->
+<link
+  href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap"
+  rel="stylesheet"
+/>
+<!-- <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" rel="stylesheet"> -->
+
+<div
+  class="background"
+  style="
+    background-image: url('https://res.cloudinary.com/dgvbilofn/image/upload/v1714020450/background_zceu6f.png');
+    height: 100vh;
+    background-size: cover;
+    background-position: center;
+    height: auto;
+    justify-content: center;
+    align-items: center;
+  "
+>
+  <app-navbar></app-navbar>
+
+  <!-- adversite section -->
+  <div
+  class="scroller"
+  data-speed="fast"
+  (mouseenter)="pauseAnimation()"
+  (mouseleave)="resumeAnimation()"
+>
+<a href="https://docs.google.com/forms/d/e/1FAIpQLSfBIRIuNPZgcyd8AwdHHUOWT6SDnSe6UIr0rYNNvEJO3E0NWw/viewform" target="_blank">
+  <ul class="tag-list scroller__inner">
+    <li>We're hiring for French Language Experts. Apply now!</li>
+    <li>We're hiring for French Language Experts. Apply now!</li>
+    <li>We're hiring for French Language Experts. Apply now!</li>
+  </ul>
+  </a>
+</div>
+  <!-- <div class="adv">
+    <h5>We are hiring for language experts role (Immediate Joining).</h5>
+
+  </div> -->
+  <!-- cover page section -->
+  <div class="coverpage">
+    <!-- Content on the left -->
+    <div class="col-md-12 justify-content-center align-items-start text-left p-5 pt-5">
+      <h1>
+        Redefining Multilingual Recruitment and Placement Solutions
+      </h1>
+      <h4>
+        At Recrutory, we pride ourselves on being more than just a recruitment partner. Powered by our own AI <span><img src="assets/verbiq_logo.png" /></span>, We are the power force in the field of language recruitment.
+      </h4>
+  
+      <!-- New Section with Read More/Read Less in two columns -->
+      <div class="row recruitment-section">
+        <!-- First Column: Image on Top, Text with Read More Below -->
+        <div class="col-md-6 column">
+          <img src="assets/111.png" alt="Language Recruitment Image" class="img-fluid" />
+          <h5>What are the unique language recruitment services offered by Recrutory?</h5>
+          <p>
+            At Recrutory, we believe in the transformative power of linguistic diversity. We envision a future where every
+            organization can harness the full potential of their multicultural workforce...
+            <span *ngIf="isReadMore1">Whether you're a multinational corporation expanding into new markets or a startup
+            looking to build a diverse team from the ground up with versatile placement consultants...</span>
+          </p>
+          <button class="toggle-button" (click)="toggleReadMore1()">
+            {{ isReadMore1 ? 'Read Less' : 'Read More' }}
+          </button>
+        </div>
+  
+        <!-- Second Column: Text on Top, Image with Read More Below -->
+        <div class="col-md-6 column">
+          <h5>Why Choose Recrutory as your language hiring consultant?</h5>
+          <p>
+            We take the time to truly understand your organization's unique requirements and culture. This allows us to not only
+            match candidates based on their language proficiency but also their professional skills and cultural fit...
+            <span *ngIf="isReadMore2">ensuring long-term success and satisfaction for both parties.</span>
+          </p>
+          <button class="toggle-button" (click)="toggleReadMore2()">
+            {{ isReadMore2 ? 'Read Less' : 'Read More' }}
+          </button>
+          <img src="assets/222.png" alt="Hiring Consultant Image" class="img-fluid" />
+        </div>
+      </div>
+  
+      <div style="margin: 2rem 0rem 0rem" class="button-part">
+        <a routerLink="/candidate">
+          <button class="liquid-button">
+            <span>For Candidates</span>
+            <div class="liquid"></div>
+          </button>
+        </a>
+        <button class="simple-button" routerLink="/company">For Companies</button>
+      </div>
+    </div>
+  </div>
+  
+  
+
+  <div class="verbiq-page">
+    <img src="assets/verbiq_big.png" />
+    <h3>Revolutionizing Linguistic Expertise Assessment</h3>
+    <div class="multiple-tabs">
+      <div class="tabs">
+        <input
+          class="input"
+          name="tabs"
+          type="radio"
+          id="tab-1"
+          checked="checked"
+        />
+        <label class="label" for="tab-1" id="label1"
+          >Advanced AI Algorithms</label
+        >
+        <div class="panel">
+          <p>
+            VerbIQ utilizes state-of-the-art AI algorithms to analyze candidate
+            responses with unparalleled accuracy, ensuring precise linguistic
+            assessment.
+          </p>
+        </div>
+        <input class="input" name="tabs" type="radio" id="tab-2" />
+        <label class="label" for="tab-2">Cultural Sanitation</label>
+        <div class="panel">
+          <p>
+            Our platform specializes in cultural sanitation, assessing
+            candidates' sensitivity to cultural nuances to ensure seamless
+            integration into diverse work environments.
+          </p>
+        </div>
+        <input class="input" name="tabs" type="radio" id="tab-3" />
+        <label class="label" for="tab-3">Customized Evaluation</label>
+        <div class="panel">
+          <p>
+            VerbIQ offers tailored assessment modules designed to meet the
+            specific linguistic requirements of various roles, including
+            customer support, interpretation, translation, and more.
+          </p>
+        </div>
+        <input class="input" name="tabs" type="radio" id="tab-4" />
+        <label class="label" for="tab-4" id="label4"
+          >Comprehensive Skill Evaluation</label
+        >
+        <div class="panel">
+          <p>
+            Assess a wide range of linguistic skills, including language
+            fluency, comprehension, communication, and cultural adaptability, to
+            identify the most qualified candidates.
+          </p>
+        </div>
+      </div>
+      <div class="know-more">
+        <a>
+          <p>Know More > > ></p>
+        </a>
+      </div>
+    </div>
+  </div>
+</div>
+<!-- pointer section -->
+<div class="pointers">
+  <div class="container-fluid">
+    <div class="row">
+      <div
+        class="col-md-6 d-flex align-items-center vector-left"
+        style="
+          background-image: url('https://res.cloudinary.com/dgvbilofn/image/upload/v1714020446/hr-solution_-_2_kmjk6o.png');
+          background-size: cover;
+          background-position: center;
+        "
+      >
+        <div class="content">
+          <div class="faq-accordion">
+            <div *ngFor="let faq of faqList; let i = index" class="faq-item">
+              <div
+                class="faq-question"
+                [ngClass]="{ active: activeIndex === i }"
+                (click)="toggleAccordion(i)"
+              >
+                <span class="toggle-icon">{{
+                  activeIndex === i ? "-" : "+"
+                }}</span>
+                <h3>{{ faq.question }}</h3>
+              </div>
+              <div
+                *ngIf="activeIndex === i"
+                class="faq-answer"
+                [ngClass]="{ open: activeIndex === i }"
+              >
+                <ul>
+                  <li *ngFor="let item of faq.answerList">{{ item }}</li>
+                </ul>
+              </div>
+              <hr />
+            </div>
+          </div>
+        </div>
+      </div>
+      <div
+        class="col-md-6 d-flex align-items-center justify-content-center vector-right"
+        style="
+          text-align: center;
+          padding: 0rem 1rem;
+          height: 82vh;
+          background: white;
+          background-size: cover;
+          background-position: center;
+        "
+      >
+        <img
+          width="550px"
+          height="500px"
+          [src]="selectedImage"
+          class="img-fluid"
+          alt="Right Image"
+        />
+        <!-- <video width="550px" height="500px" autoplay loop>
+          <source [src]="selectedImage" type="video/mp4">
+        </video> -->
+      </div>
+    </div>
+  </div>
+
+  <!-- ------------- PopUp functionality----------------- -->
+
+  <!-- <button style="margin: 50px; padding: 10px" type="button" class="btn btn-primary" (click)="openPopup()">Show Data</button> -->
+
+  <!-- Modal -->
+  <div
+    class="modal custom-modal"
+    tabindex="-1"
+    role="dialog"
+    [ngStyle]="{ display: displayStyle }"
+  >
+    <div class="modal-dialog" role="document">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h4 class="modal-title">Modal Title</h4>
+          <button
+            type="button"
+            class="close"
+            aria-label="Close"
+            (click)="closePopup()"
+          >
+            <span aria-hidden="true">&times;</span>
+          </button>
+        </div>
+        <div class="modal-body">
+          <p>Modal body content goes here.</p>
+          <p>
+            Lorem ipsum dolor sit amet, consectetur adipisicing elit. Culpa
+            eligendi veniam ipsa adipisci aut incidunt vel autem. Facere sequi
+            recusandae enim doloremque qui, deserunt voluptatum omnis a dolores?
+            Suscipit, eos!
+          </p>
+        </div>
+        <!-- <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" (click)="closePopup()">Close</button>
+      </div> -->
+      </div>
+    </div>
+  </div>
+
+  <!-- -------------------------------------------------- -->
+</div>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+
+<!-- Footer Code Starts From Here -->
+
+<link
+  rel="stylesheet"
+  href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css"
+  integrity="sha512-..."
+  crossorigin="anonymous"
+/>
+
+<!-- hr solutions section  -->
+
+<div class="container1">
+  <div
+    class="left"
+    style="
+      background-image: url('https://res.cloudinary.com/dgvbilofn/image/upload/v1714020447/hr-solution_-_1_hs3wtw.png');
+      min-height: 100vh;
+      background-size: cover;
+      background-position: center;
+    "
+  >
+    <div class="heading">
+      <h2>Comprehensive HR Solutions</h2>
+    </div>
+    <div class="divider"></div>
+
+    <div class="content1">
+      <!-- card 1 -->
+      <div class="cards">
+        <img src="assets/vector1.png" alt="Image 1" />
+        <div class="inner">
+          <h3>Multilingual Recruitment:</h3>
+          <p>
+            Bridging borders, sourcing top global talent across languages for
+            business excellence.
+          </p>
+        </div>
+      </div>
+
+      <!-- card 2 -->
+      <div class="cards">
+        <img src="assets/vector2.png" alt="Image 2" />
+        <!-- <img  src="assets/animations/page-2.gif" alt="Image 1" /> -->
+        <div class="inner">
+          <h3>Industry Expertise:</h3>
+          <p>
+            Deep industry knowledge empowers clients to stay competitive in
+            evolving business landscapes.
+          </p>
+        </div>
+      </div>
+
+      <!-- card 3 -->
+      <div class="cards">
+        <img src="assets/vector3.png" alt="Image 3" />
+        <!-- <img src="assets/animations/page-3.gif" alt="Image 3" /> -->
+        <div class="inner">
+          <h3>Global Talent Search:</h3>
+          <p>
+            Unlocking potential worldwide, delivering top-notch multilingual
+            talent to drive success.
+          </p>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div
+    class="right"
+    style="
+      background-image: url('https://res.cloudinary.com/dgvbilofn/image/upload/v1714020446/hr-solution_-_2_kmjk6o.png');
+      min-height: 100vh;
+      background-size: cover;
+      background-position: center;
+    "
+  >
+    <div class="content2">
+      <!-- card 4 -->
+      <div class="cards" id="content2-first-card">
+        <img class="img-content2" src="assets/vector4.png" alt="Image 4" />
+        <!-- <img class="img-content2" src="assets/animations/page-4.gif" alt="Image 4" /> -->
+        <!-- <img class="img-content2-img1" src="assets/animations/page-4.gif" alt="Image 4" /> -->
+        <div>
+          <h3>Workforce analytics and Executive Search:</h3>
+          <p>
+            Drive strategic talent decisions with workforce analytics, while our
+            executive search ensures industry leadership by identifying top-tier
+            professionals.
+          </p>
+        </div>
+      </div>
+
+      <!-- card 5 -->
+      <div class="cards">
+        <img class="img-content2" src="assets/vector5.png" alt="Image 5" />
+        <!-- <img class="img-content2" src="assets/animations/page-5.gif" alt="Image 5" /> -->
+        <div>
+          <h3>Assessment and Screening:</h3>
+          <p>
+            Redefine hiring with personalized assessments and AI-driven
+            screenings that seamlessly align skills and culture. Our tailored
+            evaluations ensure informed hiring decisions for success.
+          </p>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- scrolling section -->
+
+<div
+  class="scroller"
+  data-speed="fast"
+  (mouseenter)="pauseAnimation()"
+  (mouseleave)="resumeAnimation()"
+>
+  <ul class="tag-list scroller__inner">
+    <li>MULTILINGUAL PROFICIENCY</li>
+    <li>GLOBAL TALENT ACQUISITION</li>
+    <li>CROSS-CULTURAL COMMUNICATION</li>
+    <li>FIT WITH COMPANY CULTURE</li>
+    <li>MULTILINGUAL PROFICIENCY</li>
+    <li>GLOBAL TALENT ACQUISITION</li>
+    <li>CROSS-CULTURAL COMMUNICATION</li>
+    <li>FIT WITH COMPANY CULTURE</li>
+  </ul>
+</div>
+
+<!-- above footer section -->
+
+<div
+  class="above-footer-container"
+  style="
+    background-image: url('https://res.cloudinary.com/dgvbilofn/image/upload/v1714020448/justabovefooter_w7rsk0.png');
+    min-height: 100vh;
+    background-size: cover;
+    background-position: center;
+  "
+>
+
+
+
+
+
+
+
+
+  <div class="left-side">
+    <!-- <img src="assets/animations/above-footer.gif" alt="Image" /> -->
+    <!-- <img src="https://res.cloudinary.com/ddkfnfogy/image/upload/v1713937892/above_7mb_wmqpwj.gif" alt="Image" /> -->
+    <img src="https://ik.imagekit.io/2gvm11ctj/above-footer.gif?updatedAt=1713939223531" alt="Image" />
+    
+    
+  </div>
+  <div class="right-side">
+    <ul>
+      <li>
+        <p>
+          At Recrutory, we leverage data-driven and intelligent systems to
+          revolutionize the recruitment process, ensuring precision and
+          efficiency at every step.
+        </p>
+      </li>
+      <div class="horizontal-divider"></div>
+      <li>
+        <p>
+          With AI intervention and thorough screening protocols, we meticulously
+          analyze candidate data to present only the best-suited candidates for
+          your organization's needs.
+        </p>
+      </li>
+      <!-- <li class="divider">
+        <div class="horizontal-divider"></div>
+      </li> -->
+      <div class="horizontal-divider"></div>
+      <li>
+        <p>
+          Our commitment to employing AI-driven technologies guarantees that we
+          deliver the most qualified candidates, backed by thorough screening
+          processes, to elevate your team's success.
+        </p>
+      </li>
+    </ul>
+  </div>
+</div>
+
+<!-- Footer -->
+<footer
+  class="text-center text-lg-start text-muted"
+  style="font-family: 'Poppins', sans-serif"
+>
+  <div class="text-center text-md-start m-5">
+    <!-- Grid row -->
+    <div class="row">
+      <!-- Grid column -->
+      <div class="col-lg-4 col-md-12 mb-5 mb-md-0 about-us">
+        <h6 class="text-uppercase fw-bold mb-4">About Us</h6>
+
+        <p class="footer-para-about-us">
+          Recrutory, powered by
+          <img class="logo-link" src="assets/verbiq_logo.png" alt="" /> AI,
+          specializes in the multilingual recruitment, global talent search, and
+          advanced assessment and screening. We connect businesses in India and
+          worldwide with top-tier professionals, leveraging our extensive
+          network and cutting-edge technology to ensure unparalleled talent
+          matches.
+        </p>
+      </div>
+      <!-- Grid column -->
+
+      <div
+        class="col-lg-4 col-md-12 mb-5 mb-md-0 quick-links about-us"
+        style="position: relative; right: -5rem"
+      >
+        <h6 class="text-uppercase fw-bold mb-4">Quick links</h6>
+        <p>
+          <a href="verbiq" class="text-reset text-decoration-none random"
+            ><img class="logo-link" src="assets/verbiq_logo.png" alt=""
+          /></a>
+        </p>
+        <p>
+          <a href="team" class="text-reset text-decoration-none random">Meet our Team</a>
+        </p>
+        <p>
+          <a href="#!" class="text-reset text-decoration-none random"
+            >Media & Press Release</a
+          >
+        </p>
+      </div>
+
+      <!-- Grid column -->
+      <div class="col-lg-4 col-md-12 about-us">
+        <h6 class="text-uppercase fw-bold mb-4">Contact Us</h6>
+        <p>
+          <i class="fas fa-home me-3" id="footer-address"></i>Corp. Off. No 16A,
+          Floor 2, Tower A, Downtown City Vista, Fountain Road, Ashoka Nagar,
+          Kharadi, Pune – 411014
+        </p>
+        <p><i class="fas fa-envelope me-3"></i> hr&#64;recrutory.com</p>
+        <p><i class="fas fa-phone me-3"></i> +91 9373902341</p>
+      </div>
+      <!-- Grid column -->
+    </div>
+    <!-- Grid row -->
+  </div>
+
+
+  <div class="container pt-4 text-center">
+    <section class="mb-4">
+      <!-- Facebook -->
+      <a
+        data-mdb-ripple-init
+        class="btn btn-link btn-floating text-body m-1 random"
+        target="_blank"
+        href="https://www.facebook.com/profile.php?id=61556404210113"
+        role="button"
+        data-mdb-ripple-color="dark"
+        ><i class="fab fa-facebook-f iconf"></i
+      ></a>
+
+      <!-- Twitter -->
+      <a
+        data-mdb-ripple-init
+        class="btn btn-link btn-floating text-body m-1 random"
+        target="_blank"
+        href="#!"
+        role="button"
+        data-mdb-ripple-color="dark"
+        ><img width="22px" height="22px" src="assets/twitter.svg" />
+      </a>
+
+      <!-- Google -->
+      <a
+        data-mdb-ripple-init
+        class="btn btn-link btn-floating text-body m-1 random"
+        target="_blank"
+        href="#!"
+        role="button"
+        data-mdb-ripple-color="dark"
+        ><img width="15px" height="17px" src="assets/google.svg" />
+      </a>
+
+      <!-- Instagram -->
+      <a
+        data-mdb-ripple-init
+        class="btn btn-link btn-floating text-body m-1 random"
+        target="_blank"
+        href="https://www.instagram.com/recrutory/?hl=en"
+        role="button"
+        data-mdb-ripple-color="dark"
+        ><i class="fab fa-instagram iconinsta"></i
+      ></a>
+
+      <!-- Linkedin -->
+      <a
+        data-mdb-ripple-init
+        class="btn btn-link btn-floating text-body m-1 random"
+        target="_blank"
+        href="https://www.linkedin.com/company/recrutorycompany/"
+        role="button"
+        data-mdb-ripple-color="dark"
+        ><i class="fab fa-linkedin iconlinkdin"></i
+      ></a>
+    </section>
+    <!-- Section: Social media -->
+
+    <div class="text-center">&#64; 2024 TalentAxisPro Private Limited</div>
+  </div>
+</footer>
+<!-- Footer -->

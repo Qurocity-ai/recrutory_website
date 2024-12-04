@@ -1,0 +1,1700 @@
+<link
+  href="https://fonts.googleapis.com/icon?family=Material+Icons"
+  rel="stylesheet"
+/>
+
+<link
+  href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css"
+  rel="stylesheet"
+/>
+
+<div
+  class="background"
+  style="
+    background-image: url('https://res.cloudinary.com/dgvbilofn/image/upload/v1714020450/background_zceu6f.pngg');
+    min-height: 100vh;
+    background-size: cover;
+    background-position: center;
+    height: auto;
+    justify-content: center;
+    align-items: center;
+    padding-bottom: 5rem;
+  "
+>
+<app-navbar></app-navbar>
+
+
+  <!-- orientation="vertical"
+    labelPosition="bottom"
+    #stepper
+    id="verticalId"
+    animationDuration="1500" -->
+
+  <!-- form starts -->
+
+  <!---------------------------------------------------------- horizontal stepper -->
+
+  <mat-stepper
+    labelPosition="bottom"
+    #stepper
+    id="horizontalId"
+    animationDuration="1500"
+  >
+    <!--  ------------------1st step---------------------- -->
+
+    <mat-step [stepControl]="firstFormGroup">
+      <form [formGroup]="firstFormGroup" linear>
+        <ng-template matStepLabel
+          ><label class="stepper-label">Candidature</label></ng-template
+        >
+        <div class="row">
+          <!-- name -->
+          <mat-form-field appearance="outline">
+            <mat-label>Name</mat-label>
+            <input
+              matInput
+              placeholder="Enter Your Name"
+              required
+              formControlName="name"
+            />
+          </mat-form-field>
+
+          <!-- contact no -->
+          <mat-form-field appearance="outline">
+            <mat-label>Contact No</mat-label>
+            <input
+              matInput
+              type="number"
+              placeholder="9808888089"
+              value=""
+              required
+              formControlName="contactno"
+            />
+          </mat-form-field>
+        </div>
+        <div class="row">
+          <!-- email -->
+          <mat-form-field appearance="outline">
+            <mat-label>Email</mat-label>
+            <input
+              matInput
+              type="email"
+              placeholder="xyz@gmail.com"
+              value=""
+              required
+              formControlName="email"
+            />
+          </mat-form-field>
+
+          <!-- location-->
+          <mat-form-field appearance="outline">
+            <mat-label>Current Location</mat-label>
+            <input
+              matInput
+              placeholder="Pune"
+              value=""
+              required
+              formControlName="location"
+            />
+          </mat-form-field>
+        </div>
+        <div class="row">
+          <!-- company name -->
+          <mat-form-field appearance="outline">
+            <mat-label>Company Name</mat-label>
+            <input
+              matInput
+              placeholder="XYZ Pvt Ltd"
+              value=""
+              required
+              formControlName="companyName"
+            />
+          </mat-form-field>
+
+          <!-- current role -->
+          <mat-form-field appearance="outline">
+            <mat-label>Current Role</mat-label>
+            <input
+              matInput
+              placeholder="Specialist"
+              value=""
+              required
+              formControlName="currRole"
+            />
+          </mat-form-field>
+        </div>
+
+        <!-- languages -->
+
+        <div class="row">
+          <p style="margin-top: 1rem">Which Languages do you know?</p>
+          <!-- 1st option -->
+          <mat-form-field class="select-option-form" >
+            <mat-label>Language 1</mat-label>
+            <mat-select formControlName="lang1" required>
+              <mat-option>--</mat-option>
+              @for (animal of animals; track animal) {
+              <mat-option [value]="animal.value">{{ animal.name }}</mat-option>
+              }
+            </mat-select>
+            @if (animalControl.hasError('required')) {
+            <mat-error>Please choose atleast 1 language</mat-error>
+            }
+            <mat-hint>{{ animalControl.value?.value }}</mat-hint>
+          </mat-form-field>
+
+          <!-- 2nd option -->
+          <mat-form-field class="select-option-form">
+            <mat-label>Language 2</mat-label>
+            <mat-select formControlName="lang2">
+              @for (animal of animals; track animal) {
+              <mat-option [value]="animal.value">{{ animal.name }}</mat-option>
+              }
+            </mat-select>
+          </mat-form-field>
+
+          <!-- 3rd option -->
+          <mat-form-field class="select-option-form">
+            <mat-label>Language 3</mat-label>
+            <mat-select formControlName="lang3">
+              @for (animal of animals; track animal) {
+              <mat-option [value]="animal.value">{{ animal.name }}</mat-option>
+              }
+            </mat-select>
+          </mat-form-field>
+        </div>
+
+        <mat-form-field appearance="outline" class="example-full-width">
+          <mat-label appearance="outline"
+            >Any other languages?</mat-label
+          >
+          <textarea
+            rows="1"
+            matInput
+            formControlName="langKnow"
+          ></textarea>
+        </mat-form-field>
+
+        <!-- qualification -->
+
+        <div class="language-qualifications">
+          <p style="margin-top: 1rem">What is your language qualification?</p>
+          <mat-chip-listbox
+            aria-label="Fish selection"
+            multiple
+            formControlName="langQuali"
+          >
+            <mat-chip-option value="Globally recognized certification"
+              >Globally recognized certification</mat-chip-option
+            >
+            <mat-chip-option value="Graduation">Graduation</mat-chip-option>
+            <mat-chip-option value="Diploma">Diploma</mat-chip-option>
+            <mat-chip-option value="PG Diploma">PG Diploma</mat-chip-option>
+            <mat-chip-option value="Native Speaker"
+              >Native Speaker</mat-chip-option
+            >
+          </mat-chip-listbox>
+        </div>
+
+        <!-- other qualification -->
+        <mat-form-field appearance="outline" class="example-full-width">
+          <mat-label appearance="outline"
+            >Add other qualifications, if not in list</mat-label
+          >
+          <textarea
+            rows="1"
+            matInput
+            formControlName="otherlangQuali"
+          ></textarea>
+        </mat-form-field>
+
+        <!-- language proficiency -->
+        <div class="curr-proficiency radio">
+          <p>Please rate your current proficiency?</p>
+          <mat-radio-group
+            required
+            aria-label="Select an option"
+            formControlName="proficiency"
+          >
+            <mat-radio-button
+              class="radion-button"
+              value="Basic"
+              color="primary"
+              >Basic</mat-radio-button
+            >
+            <mat-radio-button
+              class="radion-button"
+              value="Intermediate"
+              color="primary"
+              >Intermediate</mat-radio-button
+            >
+            <mat-radio-button
+              class="radion-button"
+              color="primary"
+              value="Advanced"
+              >Advanced</mat-radio-button
+            >
+            <mat-radio-button
+              class="radion-button"
+              value="Fluent"
+              color="primary"
+              >Fluent</mat-radio-button
+            >
+            <mat-radio-button
+              class="radion-button"
+              value="Native Speaker"
+              color="primary"
+              >Native Speaker</mat-radio-button
+            >
+          </mat-radio-group>
+        </div>
+
+        <!-- language assessment -->
+        <div class="language-assessment radio">
+          <p>
+            Have you taken a formal language assessment through platforms like
+            Berlitz, Versant or any other in the past?
+          </p>
+          <mat-radio-group
+            aria-label="Select an option"
+            formControlName="formalAssesment"
+          >
+            <mat-radio-button class="radion-button" value="yes" color="primary"
+              >Yes</mat-radio-button
+            >
+            <mat-radio-button class="radion-button" value="no" color="primary"
+              >No</mat-radio-button
+            >
+          </mat-radio-group>
+        </div>
+
+        <!-- other's section -->
+        <mat-form-field appearance="outline" class="example-full-width">
+          <mat-label appearance="outline"
+            >If there is another platform, please mention here</mat-label
+          >
+          <textarea
+            rows="1"
+            matInput
+            formControlName="otherPlatform"
+          ></textarea>
+        </mat-form-field>
+
+        <!-- score - textarea -->
+
+        <div class="textareas">
+          <p>
+            If you have taken a formal language assessment, Please state your
+            score here along with the proficiency result for the said
+            assessment.
+          </p>
+
+          <mat-form-field appearance="outline" class="example-full-width">
+            <textarea
+              rows="1"
+              matInput
+              placeholder="Yes, I have taken.."
+              formControlName="ProficiencyResult"
+            ></textarea>
+          </mat-form-field>
+        </div>
+
+        <!-- dialects - textarea -->
+        <div class="dialects radio" style="margin-bottom: 2rem">
+          <p>
+            Are you familiar with different dialects or regional variations of
+            the language your speak?
+          </p>
+          <mat-radio-group
+            aria-label="Select an option"
+            formControlName="dialects"
+          >
+            <mat-radio-button class="radion-button" value="yes" color="primary"
+              >Yes</mat-radio-button
+            >
+            <mat-radio-button class="radion-button" value="no" color="primary"
+              >No</mat-radio-button
+            >
+          </mat-radio-group>
+        </div>
+
+        <!-- next button -->
+        <div style="text-align: right">
+          <button mat-button (click)="checkData1()">Next</button>
+        </div>
+      </form>
+    </mat-step>
+
+    <!--  ------------------2nd step---------------------- -->
+
+    <mat-step [stepControl]="secondFormGroup" label="Fill out your address">
+      <form [formGroup]="secondFormGroup">
+        <ng-template
+          ><label class="stepper-label"
+            >Continuous Learning & Development</label
+          ></ng-template
+        >
+
+        <!-- stay - updated -->
+
+        <div class="stay-updated">
+          <p style="margin-top: 1rem">
+            How do you stay updated with language changes and developments?
+          </p>
+          <mat-chip-listbox
+            aria-label="Fish selection"
+            multiple
+            formControlName="supdatedLanguage"
+          >
+            <mat-chip-option value="Reading articles"
+              >Reading articles</mat-chip-option
+            >
+            <mat-chip-option value="Taking courses"
+              >Taking courses</mat-chip-option
+            >
+            <mat-chip-option value="Attending Workshops/seminars"
+              >Attending Workshops/seminars</mat-chip-option
+            >
+            <mat-chip-option value="Following Language Blogs/Forums"
+              >Following Language Blogs/Forums</mat-chip-option
+            >
+            <mat-chip-option
+              >Native News papers and latest trends</mat-chip-option
+            >
+          </mat-chip-listbox>
+        </div>
+
+        <!-- workshops section -->
+        <div class="workshops radio">
+          <p>Do you participate in Language courses, Workshops or seminars?</p>
+          <mat-radio-group
+            aria-label="Select an option"
+            formControlName="sWorkshop"
+          >
+            <mat-radio-button
+              class="radion-button"
+              value="Frequently"
+              color="primary"
+              >Frequently</mat-radio-button
+            >
+            <mat-radio-button
+              class="radion-button"
+              value="Occasionally"
+              color="primary"
+              >Occasionally</mat-radio-button
+            >
+            <mat-radio-button
+              class="radion-button"
+              value="Rarely"
+              color="primary"
+              >Rarely</mat-radio-button
+            >
+            <mat-radio-button
+              class="radion-button"
+              value="Never"
+              color="primary"
+              >Never</mat-radio-button
+            >
+          </mat-radio-group>
+        </div>
+
+        <!-- forums  -->
+        <div class="forums radio">
+          <p>Are you a part of language-related communities or forums?</p>
+          <mat-radio-group
+            aria-label="Select an option"
+            formControlName="sLangCommunity"
+          >
+            <mat-radio-button class="radion-button" value="yes" color="primary"
+              >Yes</mat-radio-button
+            >
+            <mat-radio-button class="radion-button" value="no" color="primary"
+              >No</mat-radio-button
+            >
+          </mat-radio-group>
+        </div>
+
+        <!-- literature -->
+        <div class="literature radio">
+          <p>
+            Do you regularly read literature or watch Media in languages you
+            speak?
+          </p>
+          <mat-radio-group
+            aria-label="Select an option"
+            formControlName="sLiterature"
+          >
+            <mat-radio-button class="radion-button" value="yes" color="primary"
+              >Yes</mat-radio-button
+            >
+            <mat-radio-button class="radion-button" value="no" color="primary"
+              >No</mat-radio-button
+            >
+          </mat-radio-group>
+        </div>
+
+        <!-- new learned language - textarea -->
+
+        <div class="textareas">
+          <p>
+            How do you incorporate newly learned language skills into your work?
+          </p>
+
+          <mat-form-field appearance="outline" class="example-full-width">
+            <textarea
+              rows="1"
+              matInput
+              placeholder="I incorporate it using..."
+              formControlName="sLangIntoWork"
+            ></textarea>
+          </mat-form-field>
+        </div>
+
+        <!-- staying updated - textarea -->
+
+        <div class="textareas">
+          <p>
+            What are your methods of staying updated with language changes and
+            developments?
+          </p>
+
+          <mat-form-field appearance="outline" class="example-full-width">
+            <textarea
+              rows="1"
+              matInput
+              placeholder="Methods i used are..."
+              formControlName="sMethodLang"
+            ></textarea>
+          </mat-form-field>
+        </div>
+
+        <!-- grammar - textarea -->
+
+        <div class="textareas">
+          <p>
+            Can you explain complex grammatical concepts in the languages you're
+            proficient in?
+          </p>
+
+          <mat-form-field appearance="outline" class="example-full-width">
+            <textarea
+              rows="1"
+              matInput
+              placeholder="Yeah sure..."
+              formControlName="sgramm"
+            ></textarea>
+          </mat-form-field>
+        </div>
+
+        <div class="bottom-buttons">
+          <button mat-button matStepperPrevious>Back</button>
+          <button mat-button (click)="checkData2()">Next</button>
+        </div>
+      </form>
+    </mat-step>
+
+    <!-- ------------------------- 3rd section ----------------  -->
+
+    <mat-step [stepControl]="thirdFormGroup" label="Fill out your address">
+      <form [formGroup]="thirdFormGroup">
+        <ng-template matStepLabel
+          ><label class="stepper-label">Tools & Resources</label></ng-template
+        >
+
+        <!-- tanslation tools -->
+        <div class="tanslation-tools radio">
+          <p>
+            What tools or resources do you use for translation or language
+            related tasks?
+          </p>
+          <mat-radio-group
+            aria-label="Select an option"
+            formControlName="tTools"
+          >
+            <mat-radio-button
+              class="radion-button"
+              value="Translation Software"
+              color="primary"
+              >Translation Software</mat-radio-button
+            >
+            <mat-radio-button
+              class="radion-button"
+              value="Online Dictionaries"
+              color="primary"
+              >Online Dictionaries</mat-radio-button
+            >
+            <mat-radio-button
+              class="radion-button"
+              value="Language Learning Apps"
+              color="primary"
+              >Language Learning Apps</mat-radio-button
+            >
+            <mat-radio-button
+              class="radion-button"
+              value="Linguistic Databases"
+              color="primary"
+              >Linguistic Databases</mat-radio-button
+            >
+          </mat-radio-group>
+        </div>
+
+        <!-- other's section -->
+
+        <mat-form-field appearance="outline" class="example-full-width">
+          <mat-label appearance="outline"
+            >If there are other tools, please mention here</mat-label
+          >
+          <textarea rows="1" matInput formControlName="totherTools"></textarea>
+        </mat-form-field>
+
+        <!-- translation - software section -->
+        <div class="translation-software radio">
+          <p>Are you proficient in using translation software or platforms?</p>
+          <mat-radio-group
+            aria-label="Select an option"
+            formControlName="tTranslation"
+          >
+            <mat-radio-button class="radion-button" value="yes" color="primary"
+              >Yes</mat-radio-button
+            >
+            <mat-radio-button class="radion-button" value="no" color="primary"
+              >No</mat-radio-button
+            >
+          </mat-radio-group>
+        </div>
+
+        <!-- dictionaries section -->
+        <div class="dictionaries radio">
+          <p>
+            Do you have experience with online dictionaries or language
+            databases?
+          </p>
+          <mat-radio-group
+            aria-label="Select an option"
+            formControlName="tdictionaries"
+          >
+            <mat-radio-button class="radion-button" value="yes" color="primary"
+              >Yes</mat-radio-button
+            >
+            <mat-radio-button class="radion-button" value="no" color="primary"
+              >No</mat-radio-button
+            >
+          </mat-radio-group>
+        </div>
+
+        <!-- custom-tools section -->
+        <div class="custom-tools radio">
+          <p>
+            Have you developed any custom tools or workflows for language
+            related tasks?
+          </p>
+          <mat-radio-group
+            aria-label="Select an option"
+            formControlName="tdevelopedTool"
+          >
+            <mat-radio-button class="radion-button" value="yes" color="primary"
+              >Yes</mat-radio-button
+            >
+            <mat-radio-button class="radion-button" value="no" color="primary"
+              >No</mat-radio-button
+            >
+          </mat-radio-group>
+        </div>
+
+        <!-- last-section -->
+        <div class="last-section radio" style="margin-bottom: 2rem">
+          <p>
+            How often do you require to use a language tool to generate output?
+          </p>
+          <mat-radio-group
+            aria-label="Select an option"
+            formControlName="tgeneOutput"
+          >
+            <mat-radio-button
+              class="radion-button"
+              value="Frequently"
+              color="primary"
+              >Frequently</mat-radio-button
+            >
+            <mat-radio-button
+              class="radion-button"
+              value="Occassionally"
+              color="primary"
+              >Occassionally</mat-radio-button
+            >
+            <mat-radio-button
+              class="radion-button"
+              value="Rarely"
+              color="primary"
+              >Rarely</mat-radio-button
+            >
+            <mat-radio-button
+              class="radion-button"
+              value="Never"
+              color="primary"
+              >Never</mat-radio-button
+            >
+          </mat-radio-group>
+        </div>
+
+        <div class="bottom-buttons">
+          <button mat-button matStepperPrevious>Back</button>
+          <button mat-button (click)="checkData3()">Next</button>
+        </div>
+      </form>
+    </mat-step>
+
+    <!-- --------------------- 4th section ---------------- -->
+
+    <mat-step [stepControl]="fourFormGroup" label="Fill out your address">
+      <form [formGroup]="fourFormGroup">
+        <ng-template matStepLabel
+          ><label class="stepper-label"
+            >Specialization and Domain Expertise</label
+          ></ng-template
+        >
+
+        <!-- first section -->
+        <div class="first radio">
+          <p>
+            Are you proficient in any specialized areas such as Voice,
+            Non-voice, Legal, Medical, Technical or Literary translation?
+          </p>
+          <mat-radio-group
+            aria-label="Select an option"
+            formControlName="fproficient"
+          >
+            <mat-radio-button class="radion-button" value="yes" color="primary"
+              >Yes</mat-radio-button
+            >
+            <mat-radio-button class="radion-button" value="no" color="primary"
+              >No</mat-radio-button
+            >
+          </mat-radio-group>
+        </div>
+
+        <!-- second section -->
+        <div class="second radio">
+          <p>
+            Have you received any formal training or certifications in
+            specialized language domains?
+          </p>
+          <mat-radio-group
+            aria-label="Select an option"
+            formControlName="fFormalTrainer"
+          >
+            <mat-radio-button class="radion-button" value="yes" color="primary"
+              >Yes</mat-radio-button
+            >
+            <mat-radio-button class="radion-button" value="no" color="primary"
+              >No</mat-radio-button
+            >
+          </mat-radio-group>
+        </div>
+
+        <!-- third - textarea -->
+        <div class="textareas">
+          <p>Can you provide examples of your work in specialized areas?</p>
+
+          <mat-form-field appearance="outline" class="example-full-width">
+            <textarea
+              rows="1"
+              matInput
+              placeholder="Yeah sure..."
+              formControlName="fworkExample"
+            ></textarea>
+          </mat-form-field>
+        </div>
+
+        <div class="bottom-buttons">
+          <button mat-button matStepperPrevious>Back</button>
+          <button mat-button (click)="checkData4()">Next</button>
+        </div>
+      </form>
+    </mat-step>
+
+    <!-- ------------------- 5th step -------------------- -->
+
+    <mat-step>
+      <ng-template matStepLabel
+        ><label class="stepper-label"
+          >Practical Demonstration</label
+        ></ng-template
+      >
+
+      <form [formGroup]="fiveFormGroup">
+        <!-- first section -->
+        <div class="last-first radio" style="margin-bottom: 1.5rem">
+          <p>
+            Can you demonstrate your proficiency in the languages you claim to
+            speak by engaging in a conversation with a native of our choosing to
+            provide a simple translation or interpretation?
+          </p>
+          <mat-radio-group
+            aria-label="Select an option"
+            required
+            formControlName="fiInterpretation"
+          >
+            <mat-radio-button class="radion-button" value="yes" color="primary"
+              >Yes</mat-radio-button
+            >
+            <mat-radio-button class="radion-button" value="no" color="primary"
+              >No</mat-radio-button
+            >
+          </mat-radio-group>
+        </div>
+
+        <!-- second - textarea -->
+        <div class="textareas">
+          <p>
+            How do you handle challenges or nuances in real-time conversations?
+          </p>
+
+          <mat-form-field appearance="outline" class="example-full-width">
+            <textarea
+              rows="1"
+              matInput
+              placeholder="I try to be calm..."
+              formControlName="fichallenges"
+            ></textarea>
+          </mat-form-field>
+        </div>
+
+        <!-- third section -->
+        <div class="last-third radio" style="margin-bottom: 2rem">
+          <p>
+            Can you adapt your language skills to various contexts and
+            audiences?
+          </p>
+          <mat-radio-group
+            aria-label="Select an option"
+            formControlName="fiLanguageSkills"
+          >
+            <mat-radio-button class="radion-button" value="yes" color="primary"
+              >Yes</mat-radio-button
+            >
+            <mat-radio-button class="radion-button" value="no" color="primary"
+              >No</mat-radio-button
+            >
+            <mat-radio-button
+              class="radion-button"
+              value="maybe"
+              color="primary"
+              >maybe</mat-radio-button
+            >
+          </mat-radio-group>
+        </div>
+        <div>
+          <mat-label>Upload CV</mat-label><br /><br />
+          <input type="file" (change)="onFileSelected($event)" />
+        </div>
+      </form>
+      <div>
+        <button
+          class="last-button"
+          mat-raised-button
+          (click)="candidateSubmit()"
+        >
+          Submit
+        </button>
+      </div>
+    </mat-step>
+  </mat-stepper>
+
+  <!---------------------------------------------------------- vertical stepper -->
+
+
+  <mat-stepper
+    orientation="vertical"
+    labelPosition="bottom"
+    #stepper
+    id="verticalId"
+    animationDuration="1500"
+  >
+    <!--  ------------------1st step---------------------- -->
+
+    <mat-step [stepControl]="firstFormGroup">
+      <form [formGroup]="firstFormGroup">
+        <ng-template matStepLabel
+          ><label class="stepper-label">Candidature</label></ng-template
+        >
+        <div class="row">
+          <!-- name -->
+          <mat-form-field appearance="outline">
+            <mat-label>Name</mat-label>
+            <input
+              matInput
+              placeholder="John Sharma"
+              required
+              formControlName="name"
+            />
+          </mat-form-field>
+
+          <!-- contact no -->
+          <mat-form-field appearance="outline">
+            <mat-label>Contact No</mat-label>
+            <input
+              matInput
+              type="number"
+              placeholder="9808888089"
+              value=""
+              required
+              formControlName="contactno"
+            />
+          </mat-form-field>
+        </div>
+        <div class="row">
+          <!-- email -->
+          <mat-form-field appearance="outline">
+            <mat-label>Email</mat-label>
+            <input
+              matInput
+              type="email"
+              placeholder="xyz@gmail.com"
+              value=""
+              required
+              formControlName="email"
+            />
+          </mat-form-field>
+
+          <!-- location-->
+          <mat-form-field appearance="outline">
+            <mat-label>Current Location</mat-label>
+            <input
+              matInput
+              placeholder="Pune"
+              value=""
+              required
+              formControlName="location"
+            />
+          </mat-form-field>
+        </div>
+        <div class="row">
+          <!-- company name -->
+          <mat-form-field appearance="outline">
+            <mat-label>Company Name</mat-label>
+            <input
+              matInput
+              placeholder="XYZ Pvt Ltd"
+              value=""
+              required
+              formControlName="companyName"
+            />
+          </mat-form-field>
+
+          <!-- current role -->
+          <mat-form-field appearance="outline">
+            <mat-label>Current Role</mat-label>
+            <input
+              matInput
+              placeholder="Specialist"
+              value=""
+              required
+              formControlName="currRole"
+            />
+          </mat-form-field>
+        </div>
+
+        <!-- languages -->
+
+        <div class="row">
+          <p style="margin-top: 1rem">Which Languages do you know?</p>
+          <!-- 1st option -->
+          <mat-form-field class="select-option-form" >
+            <mat-label>Language 1</mat-label>
+            <mat-select formControlName="lang1" required>
+              <mat-option>--</mat-option>
+              @for (animal of animals; track animal) {
+              <mat-option [value]="animal.value">{{ animal.name }}</mat-option>
+              }
+            </mat-select>
+            @if (animalControl.hasError('required')) {
+            <mat-error>Please choose atleast 1 language</mat-error>
+            }
+            <mat-hint>{{ animalControl.value?.value }}</mat-hint>
+          </mat-form-field>
+
+          <!-- 2nd option -->
+          <mat-form-field class="select-option-form">
+            <mat-label>Language 2</mat-label>
+            <mat-select formControlName="lang2">
+              @for (animal of animals; track animal) {
+              <mat-option [value]="animal.value">{{ animal.name }}</mat-option>
+              }
+            </mat-select>
+          </mat-form-field>
+
+          <!-- 3rd option -->
+          <mat-form-field class="select-option-form">
+            <mat-label>Language 3</mat-label>
+            <mat-select formControlName="lang3">
+              @for (animal of animals; track animal) {
+              <mat-option [value]="animal.value">{{ animal.name }}</mat-option>
+              }
+            </mat-select>
+          </mat-form-field>
+        </div>
+
+        <mat-form-field appearance="outline" class="example-full-width">
+          <mat-label appearance="outline"
+            >Any other languages?</mat-label
+          >
+          <textarea
+            rows="1"
+            matInput
+            formControlName="langKnow"
+          ></textarea>
+        </mat-form-field>
+
+        <!-- qualification -->
+
+        <div class="language-qualifications">
+          <p style="margin-top: 1rem">What is your language qualification?</p>
+          <mat-chip-listbox
+            aria-label="Fish selection"
+            multiple
+            formControlName="langQuali"
+          >
+            <mat-chip-option value="Globally recognized certification"
+              >Globally recognized certification</mat-chip-option
+            >
+            <mat-chip-option value="Graduation">Graduation</mat-chip-option>
+            <mat-chip-option value="Diploma">Diploma</mat-chip-option>
+            <mat-chip-option value="PG Diploma">PG Diploma</mat-chip-option>
+            <mat-chip-option value="Native Speaker"
+              >Native Speaker</mat-chip-option
+            >
+          </mat-chip-listbox>
+        </div>
+
+        <!-- other qualification -->
+        <mat-form-field appearance="outline" class="example-full-width">
+          <mat-label appearance="outline"
+            >Add other qualifications, if not in list</mat-label
+          >
+          <textarea
+            rows="1"
+            matInput
+            formControlName="otherlangQuali"
+          ></textarea>
+        </mat-form-field>
+
+        <!-- language proficiency -->
+        <div class="curr-proficiency radio">
+          <p>Please rate your current proficiency?</p>
+          <mat-radio-group
+            required
+            aria-label="Select an option"
+            formControlName="proficiency"
+          >
+            <mat-radio-button
+              class="radion-button"
+              value="Basic"
+              color="primary"
+              >Basic</mat-radio-button
+            >
+            <mat-radio-button
+              class="radion-button"
+              value="Intermediate"
+              color="primary"
+              >Intermediate</mat-radio-button
+            >
+            <mat-radio-button
+              class="radion-button"
+              color="primary"
+              value="Advanced"
+              >Advanced</mat-radio-button
+            >
+            <mat-radio-button
+              class="radion-button"
+              value="Fluent"
+              color="primary"
+              >Fluent</mat-radio-button
+            >
+            <mat-radio-button
+              class="radion-button"
+              value="Native Speaker"
+              color="primary"
+              >Native Speaker</mat-radio-button
+            >
+          </mat-radio-group>
+        </div>
+
+        <!-- language assessment -->
+        <div class="language-assessment radio">
+          <p>
+            Have you taken a formal language assessment through platforms like
+            Berlitz, Versant or any other in the past?
+          </p>
+          <mat-radio-group
+            aria-label="Select an option"
+            formControlName="formalAssesment"
+          >
+            <mat-radio-button class="radion-button" value="yes" color="primary"
+              >Yes</mat-radio-button
+            >
+            <mat-radio-button class="radion-button" value="no" color="primary"
+              >No</mat-radio-button
+            >
+          </mat-radio-group>
+        </div>
+
+        <!-- other's section -->
+        <mat-form-field appearance="outline" class="example-full-width">
+          <mat-label appearance="outline"
+            >If there is another platform, please mention here</mat-label
+          >
+          <textarea
+            rows="1"
+            matInput
+            formControlName="otherPlatform"
+          ></textarea>
+        </mat-form-field>
+
+        <!-- score - textarea -->
+
+        <div class="textareas">
+          <p>
+            If you have taken a formal language assessment, Please state your
+            score here along with the proficiency result for the said
+            assessment.
+          </p>
+
+          <mat-form-field appearance="outline" class="example-full-width">
+            <textarea
+              rows="1"
+              matInput
+              placeholder="Yes, I have taken.."
+              formControlName="ProficiencyResult"
+            ></textarea>
+          </mat-form-field>
+        </div>
+
+        <!-- dialects - textarea -->
+        <div class="dialects radio" style="margin-bottom: 2rem">
+          <p>
+            Are you familiar with different dialects or regional variations of
+            the language your speak?
+          </p>
+          <mat-radio-group
+            aria-label="Select an option"
+            formControlName="dialects"
+          >
+            <mat-radio-button class="radion-button" value="yes" color="primary"
+              >Yes</mat-radio-button
+            >
+            <mat-radio-button class="radion-button" value="no" color="primary"
+              >No</mat-radio-button
+            >
+          </mat-radio-group>
+        </div>
+
+        <!-- next button -->
+        <div>
+          <button mat-button matStepperNext>Next</button>
+        </div>
+      </form>
+    </mat-step>
+
+    <!--  ------------------2nd step---------------------- -->
+
+    <mat-step [stepControl]="secondFormGroup" label="Fill out your address">
+      <form [formGroup]="secondFormGroup">
+        <ng-template matStepLabel
+          ><label class="stepper-label"
+            >Continuous Learning & Development</label
+          ></ng-template
+        >
+
+        <!-- stay - updated -->
+
+        <div class="stay-updated">
+          <p style="margin-top: 1rem">
+            How do you stay updated with language changes and developments?
+          </p>
+          <mat-chip-listbox
+            aria-label="Fish selection"
+            multiple
+            formControlName="supdatedLanguage"
+          >
+            <mat-chip-option value="Reading articles"
+              >Reading articles</mat-chip-option
+            >
+            <mat-chip-option value="Taking courses"
+              >Taking courses</mat-chip-option
+            >
+            <mat-chip-option value="Attending Workshops/seminars"
+              >Attending Workshops/seminars</mat-chip-option
+            >
+            <mat-chip-option value="Following Language Blogs/Forums"
+              >Following Language Blogs/Forums</mat-chip-option
+            >
+            <mat-chip-option
+              >Native News papers and latest trends</mat-chip-option
+            >
+          </mat-chip-listbox>
+        </div>
+
+        <!-- workshops section -->
+        <div class="workshops radio">
+          <p>Do you participate in Language courses, Workshops or seminars?</p>
+          <mat-radio-group
+            aria-label="Select an option"
+            formControlName="sWorkshop"
+          >
+            <mat-radio-button
+              class="radion-button"
+              value="Frequently"
+              color="primary"
+              >Frequently</mat-radio-button
+            >
+            <mat-radio-button
+              class="radion-button"
+              value="Occasionally"
+              color="primary"
+              >Occasionally</mat-radio-button
+            >
+            <mat-radio-button
+              class="radion-button"
+              value="Rarely"
+              color="primary"
+              >Rarely</mat-radio-button
+            >
+            <mat-radio-button
+              class="radion-button"
+              value="Never"
+              color="primary"
+              >Never</mat-radio-button
+            >
+          </mat-radio-group>
+        </div>
+
+        <!-- forums  -->
+        <div class="forums radio">
+          <p>Are you a part of language-related communities or forums?</p>
+          <mat-radio-group
+            aria-label="Select an option"
+            formControlName="sLangCommunity"
+          >
+            <mat-radio-button class="radion-button" value="yes" color="primary"
+              >Yes</mat-radio-button
+            >
+            <mat-radio-button class="radion-button" value="no" color="primary"
+              >No</mat-radio-button
+            >
+          </mat-radio-group>
+        </div>
+
+        <!-- literature -->
+        <div class="literature radio">
+          <p>
+            Do you regularly read literature or watch Media in languages you
+            speak?
+          </p>
+          <mat-radio-group
+            aria-label="Select an option"
+            formControlName="sLiterature"
+          >
+            <mat-radio-button class="radion-button" value="yes" color="primary"
+              >Yes</mat-radio-button
+            >
+            <mat-radio-button class="radion-button" value="no" color="primary"
+              >No</mat-radio-button
+            >
+          </mat-radio-group>
+        </div>
+
+        <!-- new learned language - textarea -->
+
+        <div class="textareas">
+          <p>
+            How do you incorporate newly learned language skills into your work?
+          </p>
+
+          <mat-form-field appearance="outline" class="example-full-width">
+            <textarea
+              rows="1"
+              matInput
+              placeholder="I incorporate it using..."
+              formControlName="sLangIntoWork"
+            ></textarea>
+          </mat-form-field>
+        </div>
+
+        <!-- staying updated - textarea -->
+
+        <div class="textareas">
+          <p>
+            What are your methods of staying updated with language changes and
+            developments?
+          </p>
+
+          <mat-form-field appearance="outline" class="example-full-width">
+            <textarea
+              rows="1"
+              matInput
+              placeholder="Methods i used are..."
+              formControlName="sMethodLang"
+            ></textarea>
+          </mat-form-field>
+        </div>
+
+        <!-- grammar - textarea -->
+
+        <div class="textareas">
+          <p>
+            Can you explain complex grammatical concepts in the languages you're
+            proficient in?
+          </p>
+
+          <mat-form-field appearance="outline" class="example-full-width">
+            <textarea
+              rows="1"
+              matInput
+              placeholder="Yeah sure..."
+              formControlName="sgramm"
+            ></textarea>
+          </mat-form-field>
+        </div>
+
+        <div>
+          <button mat-button matStepperPrevious>Back</button>
+          <button mat-button matStepperNext>Next</button>
+        </div>
+      </form>
+    </mat-step>
+
+    <!-- ------------------------- 3rd section ----------------  -->
+
+    <mat-step [stepControl]="thirdFormGroup" label="Fill out your address">
+      <form [formGroup]="thirdFormGroup">
+        <ng-template matStepLabel
+          ><label class="stepper-label">Tools & Resources</label></ng-template
+        >
+
+        <!-- tanslation tools -->
+        <div class="tanslation-tools radio">
+          <p>
+            What tools or resources do you use for translation or language
+            related tasks?
+          </p>
+          <mat-radio-group
+            aria-label="Select an option"
+            formControlName="tTools"
+          >
+            <mat-radio-button
+              class="radion-button"
+              value="Translation Software"
+              color="primary"
+              >Translation Software</mat-radio-button
+            >
+            <mat-radio-button
+              class="radion-button"
+              value="Online Dictionaries"
+              color="primary"
+              >Online Dictionaries</mat-radio-button
+            >
+            <mat-radio-button
+              class="radion-button"
+              value="Language Learning Apps"
+              color="primary"
+              >Language Learning Apps</mat-radio-button
+            >
+            <mat-radio-button
+              class="radion-button"
+              value="Linguistic Databases"
+              color="primary"
+              >Linguistic Databases</mat-radio-button
+            >
+          </mat-radio-group>
+        </div>
+
+        <!-- other's section -->
+
+        <mat-form-field appearance="outline" class="example-full-width">
+          <mat-label appearance="outline"
+            >If there are other tools, please mention here</mat-label
+          >
+          <textarea rows="1" matInput formControlName="totherTools"></textarea>
+        </mat-form-field>
+
+        <!-- translation - software section -->
+        <div class="translation-software radio">
+          <p>Are you proficient in using translation software or platforms?</p>
+          <mat-radio-group
+            aria-label="Select an option"
+            formControlName="tTranslation"
+          >
+            <mat-radio-button class="radion-button" value="yes" color="primary"
+              >Yes</mat-radio-button
+            >
+            <mat-radio-button class="radion-button" value="no" color="primary"
+              >No</mat-radio-button
+            >
+          </mat-radio-group>
+        </div>
+
+        <!-- dictionaries section -->
+        <div class="dictionaries radio">
+          <p>
+            Do you have experience with online dictionaries or language
+            databases?
+          </p>
+          <mat-radio-group
+            aria-label="Select an option"
+            formControlName="tdictionaries"
+          >
+            <mat-radio-button class="radion-button" value="yes" color="primary"
+              >Yes</mat-radio-button
+            >
+            <mat-radio-button class="radion-button" value="no" color="primary"
+              >No</mat-radio-button
+            >
+          </mat-radio-group>
+        </div>
+
+        <!-- custom-tools section -->
+        <div class="custom-tools radio">
+          <p>
+            Have you developed any custom tools or workflows for language
+            related tasks?
+          </p>
+          <mat-radio-group
+            aria-label="Select an option"
+            formControlName="tdevelopedTool"
+          >
+            <mat-radio-button class="radion-button" value="yes" color="primary"
+              >Yes</mat-radio-button
+            >
+            <mat-radio-button class="radion-button" value="no" color="primary"
+              >No</mat-radio-button
+            >
+          </mat-radio-group>
+        </div>
+
+        <!-- last-section -->
+        <div class="last-section radio" style="margin-bottom: 2rem">
+          <p>
+            How often do you require to use a language tool to generate output?
+          </p>
+          <mat-radio-group
+            aria-label="Select an option"
+            formControlName="tgeneOutput"
+          >
+            <mat-radio-button
+              class="radion-button"
+              value="Frequently"
+              color="primary"
+              >Frequently</mat-radio-button
+            >
+            <mat-radio-button
+              class="radion-button"
+              value="Occassionally"
+              color="primary"
+              >Occassionally</mat-radio-button
+            >
+            <mat-radio-button
+              class="radion-button"
+              value="Rarely"
+              color="primary"
+              >Rarely</mat-radio-button
+            >
+            <mat-radio-button
+              class="radion-button"
+              value="Never"
+              color="primary"
+              >Never</mat-radio-button
+            >
+          </mat-radio-group>
+        </div>
+
+        <div>
+          <button mat-button matStepperPrevious>Back</button>
+          <button mat-button matStepperNext>Next</button>
+        </div>
+      </form>
+    </mat-step>
+
+    <!-- --------------------- 4th section ---------------- -->
+
+    <mat-step [stepControl]="fourFormGroup" label="Fill out your address">
+      <form [formGroup]="fourFormGroup">
+        <ng-template matStepLabel
+          ><label class="stepper-label"
+            >Specialization and Domain Expertise</label
+          ></ng-template
+        >
+
+        <!-- first section -->
+        <div class="first radio">
+          <p>
+            Are you proficient in any specialized areas such as Voice,
+            Non-voice, Legal, Medical, Technical or Literary translation?
+          </p>
+          <mat-radio-group
+            aria-label="Select an option"
+            formControlName="fproficient"
+          >
+            <mat-radio-button class="radion-button" value="yes" color="primary"
+              >Yes</mat-radio-button
+            >
+            <mat-radio-button class="radion-button" value="no" color="primary"
+              >No</mat-radio-button
+            >
+          </mat-radio-group>
+        </div>
+
+        <!-- second section -->
+        <div class="second radio">
+          <p>
+            Have you received any formal training or certifications in
+            specialized language domains?
+          </p>
+          <mat-radio-group
+            aria-label="Select an option"
+            formControlName="fFormalTrainer"
+          >
+            <mat-radio-button class="radion-button" value="yes" color="primary"
+              >Yes</mat-radio-button
+            >
+            <mat-radio-button class="radion-button" value="no" color="primary"
+              >No</mat-radio-button
+            >
+          </mat-radio-group>
+        </div>
+
+        <!-- third - textarea -->
+        <div class="textareas">
+          <p>Can you provide examples of your work in specialized areas?</p>
+
+          <mat-form-field appearance="outline" class="example-full-width">
+            <textarea
+              rows="1"
+              matInput
+              placeholder="Yeah sure..."
+              formControlName="fworkExample"
+            ></textarea>
+          </mat-form-field>
+        </div>
+
+        <div>
+          <button mat-button matStepperPrevious>Back</button>
+          <button mat-button matStepperNext>Next</button>
+        </div>
+      </form>
+    </mat-step>
+
+    <!-- ------------------- 5th step -------------------- -->
+
+    <mat-step>
+      <ng-template matStepLabel
+        ><label class="stepper-label"
+          >Practical Demonstration</label
+        ></ng-template
+      >
+
+      <form [formGroup]="fiveFormGroup">
+        <!-- first section -->
+        <div class="last-first radio" style="margin-bottom: 1.5rem">
+          <p>
+            Can you demonstrate your proficiency in the languages you claim to
+            speak by engaging in a conversation with a native of our choosing to
+            provide a simple translation or interpretation?
+          </p>
+          <mat-radio-group
+            aria-label="Select an option"
+            required
+            formControlName="fiInterpretation"
+          >
+            <mat-radio-button class="radion-button" value="yes" color="primary"
+              >Yes</mat-radio-button
+            >
+            <mat-radio-button class="radion-button" value="no" color="primary"
+              >No</mat-radio-button
+            >
+          </mat-radio-group>
+        </div>
+
+        <!-- second - textarea -->
+        <div class="textareas">
+          <p>
+            How do you handle challenges or nuances in real-time conversations?
+          </p>
+
+          <mat-form-field appearance="outline" class="example-full-width">
+            <textarea
+              rows="1"
+              matInput
+              placeholder="I try to be calm..."
+              formControlName="fichallenges"
+            ></textarea>
+          </mat-form-field>
+        </div>
+
+        <!-- third section -->
+        <div class="last-third radio" style="margin-bottom: 2rem">
+          <p>
+            Can you adapt your language skills to various contexts and
+            audiences?
+          </p>
+          <mat-radio-group
+            aria-label="Select an option"
+            formControlName="fiLanguageSkills"
+          >
+            <mat-radio-button class="radion-button" value="yes" color="primary"
+              >Yes</mat-radio-button
+            >
+            <mat-radio-button class="radion-button" value="no" color="primary"
+              >No</mat-radio-button
+            >
+            <mat-radio-button
+              class="radion-button"
+              value="maybe"
+              color="primary"
+              >maybe</mat-radio-button
+            >
+          </mat-radio-group>
+        </div>
+        <div>
+          <mat-label>Upload CV</mat-label><br /><br />
+          <input type="file" (change)="onFileSelected($event)" />
+        </div>
+      </form>
+      <div>
+        <button
+          class="last-button"
+          mat-raised-button
+          (click)="candidateSubmit()"
+        >
+          Submit
+        </button>
+      </div>
+    </mat-step>
+  </mat-stepper>
+</div>
+
+<!-- Footer -->
+<footer
+  class="text-center text-lg-start text-muted"
+  style="font-family: 'Poppins', sans-serif"
+>
+  <div class="text-center text-md-start m-5">
+    <!-- Grid row -->
+    <div class="row">
+      <!-- Grid column -->
+      <div class="col-lg-4 col-md-12 mb-5 mb-md-0 about-us">
+        <h6 class="text-uppercase fw-bold mb-4">About Us</h6>
+
+        <p class="footer-para-about-us">
+          Recrutory, powered by
+          <img class="logo-link" src="assets/verbiq_logo.png" alt="" /> AI,
+          specializes in the multilingual recruitment, global talent search, and
+          advanced assessment and screening. We connect businesses in India and
+          worldwide with top-tier professionals, leveraging our extensive
+          network and cutting-edge technology to ensure unparalleled talent
+          matches.
+        </p>
+      </div>
+      <!-- Grid column -->
+
+      <div
+        class="col-lg-4 col-md-12 mb-5 mb-md-0 quick-links about-us"
+        style="position: relative; right: -5rem"
+      >
+        <h6 class="text-uppercase fw-bold mb-4">Quick links</h6>
+        <p>
+          <a href="verbiq" class="text-reset text-decoration-none random"
+            ><img class="logo-link" src="assets/verbiq_logo.png" alt=""
+          /></a>
+        </p>
+        <p>
+          <a href="team" class="text-reset text-decoration-none random"
+            >Meet our Team</a
+          >
+        </p>
+        <p>
+          <a href="#!" class="text-reset text-decoration-none random"
+            >Media & Press Release</a
+          >
+        </p>
+      </div>
+
+      <!-- Grid column -->
+      <div class="col-lg-4 col-md-12 about-us">
+        <h6 class="text-uppercase fw-bold mb-4">Contact Us</h6>
+        <p>
+          <i class="fas fa-home me-3" id="footer-address"></i>Corp. Off. No 16A,
+          Floor 2, Tower A, Downtown City Vista, Fountain Road, Ashoka Nagar,
+          Kharadi, Pune – 411014
+        </p>
+        <p><i class="fas fa-envelope me-3"></i> hr&#64;recrutory.com</p>
+        <p><i class="fas fa-phone me-3"></i> +91 9373902341</p>
+      </div>
+      <!-- Grid column -->
+    </div>
+    <!-- Grid row -->
+  </div>
+
+  <div class="container pt-4 text-center">
+    <section class="mb-4">
+      <!-- Facebook -->
+      <a
+        data-mdb-ripple-init
+        class="btn btn-link btn-floating text-body m-1 random"
+        target="_blank"
+        href="https://www.facebook.com/profile.php?id=61556404210113"
+        role="button"
+        data-mdb-ripple-color="dark"
+        ><i class="fab fa-facebook-f iconf"></i
+      ></a>
+
+      <!-- Twitter -->
+      <a
+        data-mdb-ripple-init
+        class="btn btn-link btn-floating text-body m-1 random"
+        target="_blank"
+        href="#!"
+        role="button"
+        data-mdb-ripple-color="dark"
+        ><img width="22px" height="22px" src="assets/twitter.svg" />
+      </a>
+
+      <!-- Google -->
+      <a
+        data-mdb-ripple-init
+        class="btn btn-link btn-floating text-body m-1 random"
+        target="_blank"
+        href="#!"
+        role="button"
+        data-mdb-ripple-color="dark"
+        ><img width="15px" height="17px" src="assets/google.svg" />
+      </a>
+
+      <!-- Instagram -->
+      <a
+        data-mdb-ripple-init
+        class="btn btn-link btn-floating text-body m-1 random"
+        target="_blank"
+        href="https://www.instagram.com/recrutory/?hl=en"
+        role="button"
+        data-mdb-ripple-color="dark"
+        ><i class="fab fa-instagram iconinsta"></i
+      ></a>
+
+      <!-- Linkedin -->
+      <a
+        data-mdb-ripple-init
+        class="btn btn-link btn-floating text-body m-1 random"
+        target="_blank"
+        href="https://www.linkedin.com/company/recrutorycompany/"
+        role="button"
+        data-mdb-ripple-color="dark"
+        ><i class="fab fa-linkedin iconlinkdin"></i
+      ></a>
+    </section>
+    <!-- Section: Social media -->
+
+    <div class="text-center">&#64; 2024 TalentAxisPro Private Limited</div>
+  </div>
+</footer>
+<!-- Footer -->

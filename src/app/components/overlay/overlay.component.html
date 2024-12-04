@@ -1,0 +1,9 @@
+<div class="container">
+  <button mat-icon-button class="close-button" (click)="onClose()">
+    <mat-icon>close</mat-icon>
+  </button>
+  <div class="scrolling-wrapper" #scrollingWrapper>
+    <div class="card" *ngFor="let color of colors" [ngStyle]="{'background-color': color}"></div>
+  </div>
+  <div class="scroll-down-trigger" (wheel)="onVerticalScroll($event)"></div>
+</div>

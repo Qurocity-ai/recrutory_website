@@ -1,0 +1,462 @@
+<!-- Import necessary Angular Material modules -->
+<link
+  href="https://fonts.googleapis.com/icon?family=Material+Icons"
+  rel="stylesheet"
+/>
+
+<link
+  href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css"
+  rel="stylesheet"
+/>
+
+<div
+  class="background"
+  style="
+    background-image: url('https://res.cloudinary.com/dgvbilofn/image/upload/v1714020450/background_zceu6f.png');
+    height: 100vh;
+    background-size: cover;
+    background-position: center;
+    height: auto;
+    justify-content: center;
+    align-items: center;
+    padding: 0rem 0rem 5rem;
+  "
+>
+<app-navbar></app-navbar>
+
+
+  <div class="card">
+    <div class="left-side">
+      <h2>
+        Hi, I'm
+        <span class="words words-1">
+          <span>Abhilasha,</span>
+          <span>Shubham,</span>
+          <span>Aditya,</span>
+          <span>Suhas,</span>
+        </span>
+        <br />
+        Lets discuss your requirement
+      </h2>
+      <div class="divider"></div>
+
+      <!-- form details -->
+
+      <div class="custom-border-to-mat-inputs">
+        <form
+          class="example-form"
+          #formRef="ngForm"
+          action="https://api.web3forms.com/submit"
+          method="POST"
+        >
+          <input
+            type="hidden"
+            name="access_key"
+            value="49503f1f-0e56-4de8-8679-6e549d0c0fc9"
+          />
+          <!-- <form
+      class="example-form"
+      #formRef="ngForm"
+      (ngSubmit)="submitForm(formRef)"
+    > -->
+          <!-- name and contact no -->
+
+          <div class="row">
+            <mat-form-field appearance="outline" class="example-full-width">
+              <mat-label>Name</mat-label>
+              <input
+                matInput
+                placeholder="Suhas Patil"
+                value=""
+                required
+                [(ngModel)]="name"
+                name="name"
+              />
+            </mat-form-field>
+            <mat-form-field appearance="outline" class="example-full-width">
+              <mat-label>Contact No</mat-label>
+              <input
+                matInput
+                type="number"
+                placeholder="9808888089"
+                value=""
+                required
+                [(ngModel)]="contactno"
+                name="contactno"
+              />
+            </mat-form-field>
+          </div>
+
+          <!-- company name and email -->
+          <div class="row">
+            <mat-form-field appearance="outline" class="example-full-width">
+              <mat-label>Company Name</mat-label>
+              <input
+                matInput
+                placeholder="XYZ Pvt Ltd"
+                value=""
+                required
+                [(ngModel)]="companyName"
+                name="companyName"
+              />
+            </mat-form-field>
+            <mat-form-field appearance="outline" class="example-full-width">
+              <mat-label>Email</mat-label>
+              <input
+                matInput
+                type="email"
+                placeholder="xyz@gmail.com"
+                value=""
+                required
+                [(ngModel)]="email"
+                name="email"
+              />
+            </mat-form-field>
+          </div>
+
+          <!-- languages section -->
+          <div class="languages-section">
+            <p>Languages resources that you require</p>
+
+            <mat-chip-listbox
+              aria-label="language selection"
+              required
+              multiple
+              [(ngModel)]="language"
+              name="language"
+            >
+              <mat-chip-option value="French">French</mat-chip-option>
+              <mat-chip-option value="German">German</mat-chip-option>
+              <mat-chip-option value="Spanish">Spanish</mat-chip-option>
+              <mat-chip-option value="Dutch">Dutch</mat-chip-option>
+              <mat-chip-option value="Portuguese">Portuguese</mat-chip-option>
+              <mat-chip-option value="Russian">Russian</mat-chip-option>
+              <mat-chip-option value="Japanese">Japanese</mat-chip-option>
+              <mat-chip-option value="Mandarin">Mandarin</mat-chip-option>
+              <mat-chip-option value="Korean">Korean</mat-chip-option>
+            </mat-chip-listbox>
+          </div>
+
+          <!-- grid options to add new languages -->
+
+          <!-- <mat-form-field appearance="outline" class="example-full-width addLanguage">
+        <mat-label>Add Additional Languages</mat-label>
+        <input
+          matInput
+          type="text"
+          placeholder="Type Your Language"
+          value=""
+          [(ngModel)]="additionalLanguage"
+          name="additionalLanguage"
+        />
+      </mat-form-field> -->
+
+          <mat-form-field
+            class="example-chip-list addLanguage"
+            appearance="outline"
+          >
+            <mat-label>Add Additional Language, If not in the List</mat-label>
+            <mat-chip-grid #chipGrid aria-label="Enter fruits">
+              @for (fruit of fruits; track fruit) {
+              <mat-chip-row
+                (removed)="remove(fruit)"
+                [editable]="true"
+                (edited)="edit(fruit, $event)"
+                [aria-description]="'press enter to edit ' + fruit.name"
+              >
+                {{ fruit.name }}
+                <button
+                  matChipRemove
+                  [attr.aria-label]="'remove ' + fruit.name"
+                >
+                  <mat-icon>cancel</mat-icon>
+                </button>
+              </mat-chip-row>
+              }
+              <input
+                placeholder="Add Languages....."
+                [matChipInputFor]="chipGrid"
+                [matChipInputSeparatorKeyCodes]="separatorKeysCodes"
+                [matChipInputAddOnBlur]="addOnBlur"
+                (matChipInputTokenEnd)="add($event)"
+                [(ngModel)]="additionalLanguage"
+                name="additionalLanguage"
+              />
+            </mat-chip-grid>
+          </mat-form-field>
+
+          <!-- location and compensation -->
+          <div class="row">
+            <mat-form-field appearance="outline" class="example-full-width">
+              <mat-label>Location</mat-label>
+              <input
+                matInput
+                placeholder="For which location do you want to hire"
+                value=""
+                required
+                [(ngModel)]="location"
+                name="location"
+              />
+            </mat-form-field>
+
+            <mat-form-field appearance="outline" class="example-full-width">
+              <mat-label>Compensation Band (in LPA) </mat-label>
+              <mat-select
+                name="ctc"
+                required
+                [(ngModel)]="compensationBand"
+                name="compensationBand"
+              >
+                <mat-option value="3.5LPA to 5LPA">3.5LPA to 5LPA</mat-option>
+                <mat-option value="5LPA to 6.5LPA">5LPA to 6.5LPA</mat-option>
+                <mat-option value="6.5LPA to 8LPA">6.5LPA to 8LPA</mat-option>
+                <mat-option value="Above 8LPA">Above 8LPA</mat-option>
+              </mat-select>
+            </mat-form-field>
+          </div>
+
+          <!-- Mode of working and role type -->
+          <div class="row">
+            <mat-form-field appearance="outline" class="example-full-width">
+              <mat-label>Mode of working</mat-label>
+              <mat-select
+                name="mode"
+                required
+                [(ngModel)]="workingMode"
+                name="workingMode"
+              >
+                <mat-option value="Remote">Remote</mat-option>
+                <mat-option value="Onsite">Onsite</mat-option>
+              </mat-select>
+            </mat-form-field>
+
+            <mat-form-field appearance="outline" class="example-full-width">
+              <mat-label>Role Type</mat-label>
+              <input
+                matInput
+                placeholder="Specialist"
+                value=""
+                required
+                [(ngModel)]="roleType"
+                name="roleType"
+              />
+            </mat-form-field>
+          </div>
+
+          <!-- timeline and communication channel -->
+          <div class="row">
+            <mat-form-field appearance="outline" class="example-full-width">
+              <mat-label>Timeline for hiring</mat-label>
+              <input
+                matInput
+                placeholder="Urgent"
+                value=""
+                required
+                [(ngModel)]="hiringTimeline"
+                name="hiringTimeline"
+              />
+            </mat-form-field>
+
+            <mat-form-field appearance="outline" class="example-full-width">
+              <mat-label>Communication Channel</mat-label>
+              <input
+                matInput
+                placeholder=""
+                value=""
+                required
+                [(ngModel)]="communicationChannel"
+                name="communicationChannel"
+              />
+            </mat-form-field>
+          </div>
+
+          <!-- Type of employement -->
+          <mat-form-field
+            appearance="outline"
+            class="example-full-width"
+            id="employment-type"
+          >
+            <mat-label>Type of Employement (Optional)</mat-label>
+            <mat-select [(ngModel)]="employementType" name="employementType">
+              <mat-option value="full-time">Full Time</mat-option>
+              <mat-option value="contractual">Contractual</mat-option>
+              <mat-option value="part-time">Part-time</mat-option>
+            </mat-select>
+          </mat-form-field>
+
+          <!-- <a
+            id="scheduleButton"
+            mat-raised-button
+            href="https://calendly.com/shra1-jbs"
+            color="primary"
+            class="meet-button example-full-width"
+            target="_blank"
+            [class.scheduled]="isMeetingScheduled"
+            (click)="scheduleMeeting()"
+            >{{ isMeetingScheduled ? "Scheduled" : "Schedule a meeting" }}</a
+          > -->
+
+          <div class="row-buttons">
+            <a
+              mat-raised-button
+              href="https://calendly.com/hr--tt9x"
+              color="primary"
+              class="meet-button last-button"
+              id="button-id"
+              target="_blank"
+              [class.scheduled]="isMeetingScheduled"
+              >{{ isMeetingScheduled ? "Scheduled" : "Schedule a meeting" }}</a
+            >
+
+            <button class="last-button" (click)="onSubmit()" mat-raised-button>
+              Submit
+            </button>
+          </div>
+        </form>
+      </div>
+    </div>
+
+    <div class="image-container">
+      <img src="https://res.cloudinary.com/dgvbilofn/image/upload/v1714020446/Contact-us_a6be4b.png" alt="Your Image" />
+      <!-- <div class="text-overlay">
+        <p>
+          <i class="fas fa-home me-3" id="footer-address"></i>Corp. Off. No 16A,
+          Floor 2, Tower A, Downtown City Vista, Fountain Road, Ashoka Nagar,
+          Kharadi, Pune – 411014
+        </p>
+        <p>
+          <a
+            style="text-decoration: none; color: white"
+            href="mailto:hr@recrutory.com"
+            ><i class="fas fa-envelope me-3"></i>hr&#64;recrutory.com</a
+          >
+        </p>
+        <p><i class="fas fa-phone me-3"></i>+91 9373902341</p>
+      </div> -->
+    </div>
+  </div>
+</div>
+
+<!-- Footer -->
+<footer
+  class="text-center text-lg-start text-muted"
+  style="font-family: 'Poppins', sans-serif"
+>
+  <div class="text-center text-md-start m-5">
+    <!-- Grid row -->
+    <div class="row">
+      <!-- Grid column -->
+      <div class="col-lg-4 col-md-12 mb-5 mb-md-0 about-us">
+        <h6 class="text-uppercase fw-bold mb-4">About Us</h6>
+
+        <p class="footer-para-about-us">
+          Recrutory, powered by
+          <img class="logo-link" src="assets/verbiq_logo.png" alt="" /> AI,
+          specializes in the multilingual recruitment, global talent search, and
+          advanced assessment and screening. We connect businesses in India and
+          worldwide with top-tier professionals, leveraging our extensive
+          network and cutting-edge technology to ensure unparalleled talent
+          matches.
+        </p>
+      </div>
+      <!-- Grid column -->
+
+      <div
+        class="col-lg-4 col-md-12 mb-5 mb-md-0 quick-links about-us"
+        style="position: relative; right: -5rem"
+      >
+        <h6 class="text-uppercase fw-bold mb-4">Quick links</h6>
+        <p>
+          <a href="verbiq" class="text-reset text-decoration-none random"
+            ><img class="logo-link" src="assets/verbiq_logo.png" alt=""
+          /></a>
+        </p>
+        <p>
+          <a href="team" class="text-reset text-decoration-none random">Meet our Team</a>
+        </p>
+        <p>
+          <a href="#!" class="text-reset text-decoration-none random"
+            >Media & Press Release</a
+          >
+        </p>
+      </div>
+
+      <!-- Grid column -->
+      <div class="col-lg-4 col-md-12 about-us">
+        <h6 class="text-uppercase fw-bold mb-4">Contact Us</h6>
+        <p>
+          <i class="fas fa-home me-3" id="footer-address"></i>Corp. Off. No 16A,
+          Floor 2, Tower A, Downtown City Vista, Fountain Road, Ashoka Nagar,
+          Kharadi, Pune – 411014
+        </p>
+        <p><i class="fas fa-envelope me-3"></i> hr&#64;recrutory.com</p>
+        <p><i class="fas fa-phone me-3"></i> +91 9373902341</p>
+      </div>
+      <!-- Grid column -->
+    </div>
+    <!-- Grid row -->
+  </div>
+
+  <div class="container pt-4 text-center">
+    <section class="mb-4">
+      <!-- Facebook -->
+      <a
+        data-mdb-ripple-init
+        class="btn btn-link btn-floating text-body m-1 random"
+        target="_blank"
+        href="https://www.facebook.com/profile.php?id=61556404210113"
+        role="button"
+        data-mdb-ripple-color="dark"
+        ><i class="fab fa-facebook-f iconf"></i
+      ></a>
+
+      <!-- Twitter -->
+      <a
+        data-mdb-ripple-init
+        class="btn btn-link btn-floating text-body m-1 random"
+        target="_blank"
+        href="#!"
+        role="button"
+        data-mdb-ripple-color="dark"
+        ><img width="22px" height="22px" src="assets/twitter.svg" />
+      </a>
+
+      <!-- Google -->
+      <a
+        data-mdb-ripple-init
+        class="btn btn-link btn-floating text-body m-1 random"
+        target="_blank"
+        href="#!"
+        role="button"
+        data-mdb-ripple-color="dark"
+        ><img width="15px" height="17px" src="assets/google.svg" />
+      </a>
+
+      <!-- Instagram -->
+      <a
+        data-mdb-ripple-init
+        class="btn btn-link btn-floating text-body m-1 random"
+        target="_blank"
+        href="https://www.instagram.com/recrutory/?hl=en"
+        role="button"
+        data-mdb-ripple-color="dark"
+        ><i class="fab fa-instagram iconinsta"></i
+      ></a>
+
+      <!-- Linkedin -->
+      <a
+        data-mdb-ripple-init
+        class="btn btn-link btn-floating text-body m-1 random"
+        target="_blank"
+        href="https://www.linkedin.com/company/recrutorycompany/"
+        role="button"
+        data-mdb-ripple-color="dark"
+        ><i class="fab fa-linkedin iconlinkdin"></i
+      ></a>
+    </section>
+    <!-- Section: Social media -->
+
+    <div class="text-center">&#64; 2024 TalentAxisPro Private Limited</div>
+  </div>
+</footer>
+<!-- Footer -->
